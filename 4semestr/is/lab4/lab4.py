@@ -91,7 +91,7 @@ def n4():
     power(a, n)
 
 
-def n5():  #доделать
+def n5():  
 
     def polindrom(a):
         a=a.replace(" ", "")
@@ -106,4 +106,43 @@ def n5():  #доделать
     print(polindrom(a))
 
 
-n5()
+def n6():
+    def print_without_duplicate(message):
+        global list
+        if message in list:
+            b=0
+        else:
+            print(message)
+            list.append(message)
+    global list
+    list=[""]
+    print_without_duplicate("привет")
+    print_without_duplicate("привет")
+    print_without_duplicate("как дела?")
+    print_without_duplicate("как дела?")
+    print_without_duplicate("привет")
+    print_without_duplicate("пока")
+    
+def n7():
+    def add_friends(a,b):
+        global li
+        li[a]=b
+    def are_friends(a,b):
+        global li
+        if b in li[a]:
+            return True
+        else:
+            return False
+    def print_friends(a):
+        global li
+        b=list(li[a])
+        b=li[a].sort()
+        print(b)
+        #for x in range(len(b)):
+            #print(list(b)[x],end=" ")
+    global li
+    li={}
+    add_friends("Мария",["Иван","Пётр","Антон"])
+    print(are_friends("Мария","Иван"))
+    print_friends("Мария")
+n7()

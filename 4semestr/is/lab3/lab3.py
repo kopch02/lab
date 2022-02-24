@@ -14,7 +14,7 @@ def n3():
         set([1, 2, 3, 4, 4, 4, 1, 5, 2]).intersection(set([1, 7, 7, 8, 5, 2])))
 
 
-def n4():
+def n4():#множества
     a = input("введите строку")
     b = list(a)
     c = []
@@ -26,7 +26,7 @@ def n4():
             c.append(b[x])
 
 
-def n5():
+def n5():# множества
     a = int(input("строки:"))
     g = 0
     for x in range(a):
@@ -34,3 +34,6 @@ def n5():
         w = b.split()
         g += len(w)
     print(g)
+
+a="qwerty"
+print(a[0])

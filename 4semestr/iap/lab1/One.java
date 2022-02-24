@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import Cilinder.*;
+import figurs.*;
 
 class One {
     public static void main(String[] args) {
@@ -43,158 +45,48 @@ class Create{
             System.out.print("hight for triangle->");
             double ht=in.nextDouble();
 
-            Shape e= new Eleps(ae,be);
-            Shape c= new Circle(r);
-            Shape rec= new Rectangle(a,b);
-            Shape s= new Square(as);
-            Shape t= new Triangle(at,h);
+            Shape e= new figurs.Eleps(ae,be);
+            Shape c= new figurs.Circle(r);
+            Shape rec= new figurs.Rectangle(a,b);
+            Shape s= new figurs.Square(as);
+            Shape t= new figurs.Triangle(at,h);
 
-            Cylinder ce = new Cylinder(e,he);
-            Cylinder cc = new Cylinder(c,hc);
-            Cylinder cr = new Cylinder(rec,hr);
-            Cylinder cs = new Cylinder(s,hs);
-            Cylinder ct = new Cylinder(t,ht);
+            Cylinder ce = new Cilinder.Cylinder(e,he);
+            Cylinder cc = new Cilinder.Cylinder(c,hc);
+            Cylinder cr = new Cilinder.Cylinder(rec,hr);
+            Cylinder cs = new Cilinder.Cylinder(s,hs);
+            Cylinder ct = new Cilinder.Cylinder(t,ht);
 
 
             S=e.area();
-            System.out.printf("площадь эллипса= %s\n",S);
+            System.out.printf("sqare of eleps= %s\n",S);
             V=ce.volume();
-            System.out.printf("обьём эллипса= %s\n\n",V);
+            System.out.printf("volume of eleps= %s\n\n",V);
 
             S=c.area();
-            System.out.printf("площадь круга= %s\n",S);
+            System.out.printf("sqare of circle= %s\n",S);
             V=cc.volume();
-            System.out.printf("обьём круга= %s\n\n",V);
+            System.out.printf("volume of circle= %s\n\n",V);
 
             S=rec.area();
-            System.out.printf("площадь прямоугольника= %s\n",S);
+            System.out.printf("sqare of rectangle= %s\n",S);
             V=cr.volume();
-            System.out.printf("обьём прямоугольника= %s\n\n",V);
+            System.out.printf("volume of rectangle= %s\n\n",V);
 
             S=s.area();
-            System.out.printf("площадь квадрата= %s\n",S);
+            System.out.printf("sqare of square= %s\n",S);
             V=cs.volume();
-            System.out.printf("обьём квадрата= %s\n\n",V);
+            System.out.printf("volume of square= %s\n\n",V);
 
             S=t.area();
-            System.out.printf("площадь треугольника= %s\n",S);
+            System.out.printf("sqare of triangle= %s\n",S);
             V=ct.volume();
-            System.out.printf("обьём треугольника= %s\n\n",V);
+            System.out.printf("volume of triangle= %s\n\n",V);
 
             in.close();
         }catch(IllegalArgumentException exc)
         {
             System.out.println(exc.getMessage());
         }
-    }
-}
-interface Shape{
-    final double PI=3.14159265359;
-    double area();
-    void show();
-}
-
-class Cylinder{
-    double S;
-    double H;
-    Cylinder(Shape a,double h){
-        if (h>0){
-            this.S=a.area();
-            this.H=h;
-        }
-        else{
-            throw new IllegalArgumentException("error Cylinder");
-        }
-    }
-    double volume(){
-        return(S*H);
-    }
-}
-
-class Eleps implements Shape{
-    protected double A;
-    protected double B;
-    public Eleps(){}
-    public Eleps(double ae, double be){
-        if ((ae>0) && (be>0)){
-            this.A=ae;
-            this.B=be;
-        }
-        else{
-            throw new IllegalArgumentException("error Eleps");
-        }
-    }
-    public double area(){
-        return(A*B*PI);
-    }
-    public void show(){
-
-    }
-}
-class Circle extends Eleps{
-    public Circle(double r){
-        if(r>0){
-            this.A=r;
-            this.B=r;
-        }
-        else{
-            throw new IllegalArgumentException("error Circle");
-        }
-    }
-    public void show(){
-
-    }
-}
-class Triangle implements Shape{
-    double A;
-    double H;
-    public Triangle(double a, double h){
-        if ((a>0)&&(h>0)){
-            this.A=a;
-            this.H=h;
-        }
-        else{
-            throw new IllegalArgumentException("error Triangle");
-        }
-    }
-    public double area(){
-        return(0.5*A*H);
-    }
-    public void show(){
-
-    }
-}
-class Rectangle implements Shape{
-    double A;
-    double B;
-    public Rectangle(){}
-    public Rectangle(double a, double b){
-        if ((a>0)&&(b>0)){
-            this.A=a;
-            this.B=b;
-        }
-        else{
-            throw new IllegalArgumentException("error Rectangle");
-        }
-    }
-    public double area(){
-        return(A*B);
-    }
-    public void show(){
-
-    }
-}
-class Square extends Rectangle{
-    public Square(double as){
-        if (as>0){
-            this.A=as;
-            this.B=as;
-        }
-        else{
-            throw new IllegalArgumentException("error Sqare");
-        }
-    }
-    public void show(){
-
     }
 }
