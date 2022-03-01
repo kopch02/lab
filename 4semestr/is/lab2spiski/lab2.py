@@ -181,3 +181,5 @@ def n8():
                     print("YES,3")
                     quit()
     print("NO")
+
+n8()
