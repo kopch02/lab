@@ -16,8 +16,8 @@ def n3():
 
 def n4():#множества
     a = input("введите строку")
-    b = set(a)
-    c = {}
+    b = list(a)
+    c = []
     for x in range(0, len(b), 2):
         if b[x] in c:
             print(b[x], "YES")
@@ -35,4 +35,3 @@ def n5():# множества
         g += len(w)
     print(g)
 
-n4()
