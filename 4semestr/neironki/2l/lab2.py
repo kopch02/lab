@@ -1,12 +1,14 @@
+import math as m
+
 x0=[1,1,1,1]
 x1=[0,0,1,1]
 x2=[0,1,0,1]
 x=[x0,x1,x2]
 
-wx=[0.1,-0.05,0.05]
+wx1=[0.1,-0.05,0.05]
 wx2=[0.1,-0.1,0.01]
 wy=[-0.05,-0.01,-0.05]
-w=[wx,wy,wx2]
+w=[wx1,wx2,wy]
 
 y0=[1,1,1,1]
 y1=[0,0,0,0]
@@ -18,37 +20,72 @@ c=[0,1,1,0]
 e1=0
 e2=0
 
-ly=0.001
+q=0
+r=0
+t=0
+
+ly=0.1
 
 for epoh in range(10000):
     E=0
-    z=0
     for sample in range(4):
+        z=0
+        q=0
+        r=0
+        t=0
+
+        y1[sample]=0
+        
+        y2[sample]=0
+
         for i in range(3):
-            y1[sample]+=w[0][i]*x[i][sample]
+            q+=w[0][i]*x[i][sample]
+        y1[sample]=1/(1+pow(m.e,-q))
         for i in range(3):
-            y2[sample]+=w[2][i]*x[i][sample]
+            r+=w[1][i]*x[i][sample]
+        y2[sample]=1/(1+pow(m.e,-r))
+
+
         for i in range(3):
-            z+=w[1][i]*y[i][sample]
+            t+=w[2][i]*y[i][sample]
+        z=1/(1+pow(m.e,-t))
         
         #z=w[1][0]*y[0][sample]+w[1][1]*y[1][sample]+w[1][2]*y[2][sample]
-        for i in range(4):
-            e=0.5*pow(c[i]-z,2)
-            E+=e
+        
+        e=c[sample]-z
+        
+        for i in range(3):
+            w[2][i]+=ly*y[i][sample]*(c[sample]-z)*(z*(1-z))
 
-        e1=E*w[1][1]
-        e2=E*w[1][2]
+        e1=e*w[2][1]*(z*(1-z))
+        e2=e*w[2][2]*(z*(1-z))
+
         for i in range(3):
-            w[0][i]+=ly*x0[i]*(e1)
-            w[2][i]+=ly*x0[i]*(e2)
-        for i in range(3):
-            w[1][i]+=ly*y[i][sample]*(c[sample]-z)
-    E=0
+            w[0][i]+=ly*x[i][sample]*(e1)*(y1[sample]*(1-y1[sample]))
+            w[1][i]+=ly*x[i][sample]*(e2)*(y2[sample]*(1-y2[sample]))
+
     for i in range(4):
         e=0.5*pow(c[i]-z,2)
         E+=e
-    print(E/4)
+    if epoh%100==0:
+        print(E/4)
+    
         
 for sample in range(4):
-    z=w[1][0]*y0[sample]+w[1][1]*y1[sample]+w[1][2]*y2[sample]
+    z=0
+    
+    y1[sample]=0    
+    y2[sample]=0
+
+    for i in range(3):
+        q+=w[0][i]*x[i][sample]
+    y1[sample]=1/(1+pow(m.e,-q))
+    for i in range(3):
+        r+=w[1][i]*x[i][sample]
+    y2[sample]=1/(1+pow(m.e,-r))
+
+
+    for i in range(3):
+        t+=w[2][i]*y[i][sample]
+    z=1/(1+pow(m.e,-t))
     print(c[sample],"   ",z)
