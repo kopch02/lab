@@ -10,7 +10,12 @@ public class Square extends Rectangle{
             throw new IllegalArgumentException("error Sqare");
         }
     }
+    public double ret(){
+        area();
+        return S;
+    }
     public void show(){
-
+        area();
+        System.out.printf("sqare of square= %s\n",S);
     }
 }

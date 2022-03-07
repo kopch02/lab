@@ -3,6 +3,7 @@ package figurs;
 public class Triangle implements Shape{
     double A;
     double H;
+    double S;
     public Triangle(double a, double h){
         if ((a>0)&&(h>0)){
             this.A=a;
@@ -12,10 +13,15 @@ public class Triangle implements Shape{
             throw new IllegalArgumentException("error Triangle");
         }
     }
-    public double area(){
-        return(0.5*A*H);
+    public void area(){
+        S=0.5*A*H;
+    }
+    public double ret(){
+        area();
+        return S;
     }
     public void show(){
-
+        area();
+        System.out.printf("sqare of triangle= %s\n",S);
     }
 }

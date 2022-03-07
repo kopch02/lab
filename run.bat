@@ -1,0 +1,1 @@
+java -jar --enable-preview C:\Users\iskan\Desktop\ycheba\lab\lab.jar

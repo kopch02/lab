@@ -7,7 +7,7 @@ public class Cylinder{
     double H;
     public Cylinder(Shape a,double h){
         if (h>0){
-            this.S=a.area();
+            this.S=a.ret();
             this.H=h;
         }
         else{

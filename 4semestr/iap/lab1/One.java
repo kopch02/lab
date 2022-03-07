@@ -12,7 +12,7 @@ class Create{
     public void run(){
         try{
             Scanner in = new Scanner(System.in);
-            double S,V;
+            double V;
 
             System.out.print("endter a and b for eleps a->");
             double ae=in.nextDouble();
@@ -20,7 +20,7 @@ class Create{
             double be=in.nextDouble();
             System.out.print("hight for eleps->");
             double he=in.nextDouble();
-
+            
             System.out.print("enter radius for circle(r)->");
             double r=in.nextDouble();
             System.out.print("hight for circle->");
@@ -57,29 +57,23 @@ class Create{
             Cylinder cs = new Cilinder.Cylinder(s,hs);
             Cylinder ct = new Cilinder.Cylinder(t,ht);
 
-
-            S=e.area();
-            System.out.printf("sqare of eleps= %s\n",S);
+            e.show();
             V=ce.volume();
             System.out.printf("volume of eleps= %s\n\n",V);
 
-            S=c.area();
-            System.out.printf("sqare of circle= %s\n",S);
+            c.show();
             V=cc.volume();
             System.out.printf("volume of circle= %s\n\n",V);
 
-            S=rec.area();
-            System.out.printf("sqare of rectangle= %s\n",S);
+            rec.show();
             V=cr.volume();
             System.out.printf("volume of rectangle= %s\n\n",V);
 
-            S=s.area();
-            System.out.printf("sqare of square= %s\n",S);
+            s.show();
             V=cs.volume();
             System.out.printf("volume of square= %s\n\n",V);
 
-            S=t.area();
-            System.out.printf("sqare of triangle= %s\n",S);
+            t.show();
             V=ct.volume();
             System.out.printf("volume of triangle= %s\n\n",V);
 
