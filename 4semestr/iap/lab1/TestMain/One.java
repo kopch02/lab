@@ -1,15 +1,14 @@
+package TestMain;
+
 import java.util.Scanner;
 import Cilinder.*;
 import figurs.*;
+import Ex.Ex.Exc2D;
+import Ex.Ex.Exc3D;
 
-class One {
-    public static void main(String[] args) {
-        Create r=new Create();
-        r.run();
-    }
-}  
-class Create{
-    public void run(){
+
+class One{
+    public static void main(String[] args)throws Exception {
         try{
             Scanner in = new Scanner(System.in);
             double V;
@@ -78,9 +77,10 @@ class Create{
             System.out.printf("volume of triangle= %s\n\n",V);
 
             in.close();
-        }catch(IllegalArgumentException exc)
-        {
-            System.out.println(exc.getMessage());
+        }catch (Exc2D exc2d) {
+            exc2d.show();
+        } catch (Exc3D exc3d) {
+            exc3d.Out();
         }
     }
 }

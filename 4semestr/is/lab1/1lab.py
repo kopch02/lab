@@ -209,4 +209,4 @@ def n13():
     for x in range(a - 2):
         print(c, " " * (b - 2), c, sep='')
     print(str(c) * b, sep=" ")
-n7()
+n13()

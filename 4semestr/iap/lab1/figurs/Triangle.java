@@ -1,16 +1,20 @@
 package figurs;
 
+import Ex.*;
+import Ex.Ex.Exc2D;
+
 public class Triangle implements Shape{
     double A;
     double H;
     double S;
-    public Triangle(double a, double h){
+    public Triangle(double a, double h)throws Exc2D{
+        Ex e = new Ex();
         if ((a>0)&&(h>0)){
             this.A=a;
             this.H=h;
         }
         else{
-            throw new IllegalArgumentException("error Triangle");
+            throw e.new Exc2D("Rectangle creation fail");
         }
     }
     public void area(){

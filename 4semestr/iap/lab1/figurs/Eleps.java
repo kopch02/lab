@@ -1,17 +1,20 @@
 package figurs;
+import Ex.*;
+import Ex.Ex.Exc2D;
 
 public class Eleps implements Shape{
     public double A;
     public double B;
     public double S;
     public Eleps(){}
-    public Eleps(double ae, double be){
+    public Eleps(double ae, double be)throws Exc2D{
+        Ex e = new Ex();
         if ((ae>0) && (be>0)){
             this.A=ae;
             this.B=be;
         }
         else{
-            throw new IllegalArgumentException("error Eleps");
+            throw e.new Exc2D("Eleps creation fail");
         }
     }
     public void area(){
