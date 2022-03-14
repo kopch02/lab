@@ -135,7 +135,7 @@ def n8():
                 quit()
             fc.append(c)
             f[a - 1][b - 1] = "f"
-    #вывод доски
+    # вывод доски
     for i in range(9):
         print(i, end="   ")
     print()
@@ -150,10 +150,10 @@ def n8():
                 end="   ",
             )
         print()
-    #проверка
+    # проверка
     p = 8
     for i in range(8):
-        for x in range(8):  #проверка по горизонтали
+        for x in range(8):  # проверка по горизонтали
             rev = f[i][::-1]
             q = f[i].index("f")
             w = rev.index("f")
@@ -181,5 +181,6 @@ def n8():
                     print("YES,3")
                     quit()
     print("NO")
+
 
 n8()

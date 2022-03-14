@@ -41,6 +41,7 @@ for epoh in range(10000):
         for i in range(3):
             q+=w[0][i]*x[i][sample]
         y1[sample]=1/(1+pow(m.e,-q))
+        
         for i in range(3):
             r+=w[1][i]*x[i][sample]
         y2[sample]=1/(1+pow(m.e,-r))
@@ -54,11 +55,13 @@ for epoh in range(10000):
         
         e=c[sample]-z
         
+        delta = e*z*(1-z)
+        
         for i in range(3):
             w[2][i]+=ly*y[i][sample]*(c[sample]-z)*(z*(1-z))
 
-        e1=e*w[2][1]*(z*(1-z))
-        e2=e*w[2][2]*(z*(1-z))
+        e1=w[2][1]*(y1[sample]*(1-y1[sample]))*delta
+        e2=w[2][2]*(y2[sample]*(1-y2[sample]))*delta
 
         for i in range(3):
             w[0][i]+=ly*x[i][sample]*(e1)*(y1[sample]*(1-y1[sample]))

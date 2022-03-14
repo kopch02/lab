@@ -57,7 +57,26 @@ def n4():
             print("Access denied")
         
 def n5():
+    from operator import itemgetter
     n=int(input("количесов строк->"))
     a=[]
     for x in range(n):
-        a.append(input())
+        a.append(input("->"))
+    S=dict()
+    for i in range(n):
+        temp=a[i].split()
+        for t in temp:
+            if t in S:
+                S[t]+=1
+            else:
+                S[t]=1
+    
+    b=[]
+    for key,val in S.items():
+        temp=(val,key)
+        b.append(temp)
+    
+    
+    print(sorted(sorted(b,reverse=True),key=itemgetter(1))) 
+
+n5()
