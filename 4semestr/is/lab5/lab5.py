@@ -216,19 +216,25 @@ def n12():
             a.append(a[s]+temp[s])
         return a
     print(patrial_sums(1, 4, 5, 6, 7))
+
+
 def n13():
-    def power(a,n):
-        if n==1:
+    def power(a, n):
+        if n == 1:
             return a
         else:
-            n-=1
-            return a*power(a,n)
-    print(power(2,2))
+            n -= 1
+            return a*power(a, n)
+    print(power(2, 2))
+
+
 def n14():
     def recursive_len(lis):
         if not lis:
             return 0
         return 1+recursive_len(lis[1:])
-    print(recursive_len([1,2,3,4,5,6]))
+    print(recursive_len([1, 2, 3, 4, 5, 6]))
+
+
 def n15():
     pass
