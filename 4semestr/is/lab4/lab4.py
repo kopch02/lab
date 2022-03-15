@@ -1,4 +1,4 @@
-def n1():
+def n1():#через словарь попробовать
     from collections import Counter
     text = "very very very big text"
     a = text.split()
@@ -83,4 +83,4 @@ def n5():
     print(sorted(sorted(b, reverse=True), key=itemgetter(1)))
 
 
-n5()
+

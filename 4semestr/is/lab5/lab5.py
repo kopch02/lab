@@ -97,8 +97,7 @@ def n5():
     def polindrom(a):
         a = a.replace(" ", "")
         rev = a[::-1]
-        r = rev.replace(" ", "")
-        if a == r:
+        if a == rev:
             return "палиндром"
         else:
             return "не палиндром"
@@ -181,11 +180,10 @@ def n10():
         temp = copy.deepcopy(matrix)
         for i in range(len(matrix)):
             for y in range(len(matrix[0])):
-                temp[y][i] = matrix[i][y]
-            print(temp)
-        return temp
+                matrix[y][i] = temp[i][y]
     matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-    for x in transpose(matrix):
+    transpose(matrix)
+    for x in matrix:
         print(x)
 
 
@@ -224,7 +222,7 @@ def n13():
             return a
         else:
             n -= 1
-            return a*power(a, n)
+            return a * power(a, n)
     print(power(2, 2))
 
 
@@ -232,7 +230,7 @@ def n14():
     def recursive_len(lis):
         if not lis:
             return 0
-        return 1+recursive_len(lis[1:])
+        return 1 + recursive_len(lis[1:])
     print(recursive_len([1, 2, 3, 4, 5, 6]))
 
 
