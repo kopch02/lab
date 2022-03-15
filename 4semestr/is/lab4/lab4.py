@@ -1,9 +1,13 @@
 def n1():#через словарь попробовать
-    from collections import Counter
     text = "very very very big text"
+    ar={}
     a = text.split()
-    c = Counter(a)
-    print(c)
+    for x in a:
+        if x in ar: 
+            ar[x]+=1
+        else:
+            ar[x]=1
+    print(ar)
 
 
 def n2():
@@ -82,5 +86,5 @@ def n5():
 
     print(sorted(sorted(b, reverse=True), key=itemgetter(1)))
 
-
+n1()
 
