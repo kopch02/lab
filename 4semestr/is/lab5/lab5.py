@@ -1,4 +1,5 @@
 from math import sqrt
+from tkinter import N
 
 
 def n1():
@@ -18,7 +19,7 @@ def n1():
 def n2():
 
     def distance(x1, y1, x2, y2):
-        res = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2))
+        res = sqrt(((x2 - x1)**2) + ((y2 - y1)**2))
         print(res)
 
     x1 = int(input("x1->"))
@@ -91,13 +92,13 @@ def n4():
     power(a, n)
 
 
-def n5():  
+def n5():
 
     def polindrom(a):
-        a=a.replace(" ", "")
+        a = a.replace(" ", "")
         rev = a[::-1]
-        r=rev.replace(" ", "")
-        if a==r:
+        r = rev.replace(" ", "")
+        if a == r:
             return "палиндром"
         else:
             return "не палиндром"
@@ -110,39 +111,124 @@ def n6():
     def print_without_duplicate(message):
         global list
         if message in list:
-            b=0
+            b = 0
         else:
             print(message)
             list.append(message)
     global list
-    list=[""]
+    list = [""]
     print_without_duplicate("привет")
     print_without_duplicate("привет")
     print_without_duplicate("как дела?")
     print_without_duplicate("как дела?")
     print_without_duplicate("привет")
     print_without_duplicate("пока")
-    
+
+
 def n7():
-    def add_friends(a,b):
+    def add_friends(a, b):
         global li
-        li[a]=b
-    def are_friends(a,b):
+        li[a] = b
+
+    def are_friends(a, b):
         global li
         if b in li[a]:
             return True
         else:
             return False
+
     def print_friends(a):
         global li
-        b=list(li[a])
-        b=li[a].sort()
-        print(b)
-        #for x in range(len(b)):
-            #print(list(b)[x],end=" ")
+        b = list(li[a])
+        b.sort()
+        for x in b:
+            print(x, end=" ")
     global li
-    li={}
-    add_friends("Мария",["Иван","Пётр","Антон"])
-    print(are_friends("Мария","Иван"))
+    li = {}
+    add_friends("Мария", ["Иван", "Пётр", "Антон"])
+    print(are_friends("Мария", "Иван"))
     print_friends("Мария")
-n7()
+
+
+def n8():
+    def mirror(arr):
+        temp = []
+        for x in arr:
+            temp.append(x)
+        temp.reverse()
+        for i in temp:
+            arr.append(i)
+    arr = [1, 2, 3]
+    mirror(arr)
+    print(arr)
+
+
+def n9():
+    def from_string_to_list(string, conteiner):
+        temp = list(string)
+        for x in range(0, len(string), 2):
+            a.append(int(string[x]))
+    a = [1, 2, 3]
+    st = input("что добавить?->")
+    from_string_to_list(st, a)
+    print(a)
+
+
+def n10():
+    import copy
+
+    def transpose(matrix):
+        temp = copy.deepcopy(matrix)
+        for i in range(len(matrix)):
+            for y in range(len(matrix[0])):
+                temp[y][i] = matrix[i][y]
+            print(temp)
+        return temp
+    matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+    for x in transpose(matrix):
+        print(x)
+
+
+def n11():
+    def matrix(n=1, m=0, a=0):
+        if m == 0:
+            if n != 1:
+                m = n
+        matrix = []
+        for x in range(n):
+            matrix.append([a])
+            for y in range(m-1):
+                matrix[x].append(a)
+        return matrix
+    s = matrix(3, 5, 9)
+    for q in s:
+        print(q)
+
+
+def n12():
+    def patrial_sums(*n):
+        a = [0]
+        temp = []
+        for x in n:
+            temp.append(x)
+        a.append(temp[0])
+        for s in range(1, len(temp)):
+            a.append(a[s]+temp[s])
+        return a
+    print(patrial_sums(1, 4, 5, 6, 7))
+def n13():
+    def power(a,n):
+        if n==1:
+            return a
+        else:
+            n-=1
+            return a*power(a,n)
+    print(power(2,2))
+def n14():
+    def recursive_len(lis):
+        if not lis:
+            return 0
+        return 1+recursive_len(lis[1:])
+    print(recursive_len([1,2,3,4,5,6]))
+def n15():
+    pass
