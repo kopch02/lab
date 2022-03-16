@@ -198,6 +198,14 @@ def n11():
             for y in range(m-1):
                 matrix[x].append(a)
         return matrix
+    s = matrix(3)
+    for q in s:
+        print(q)
+    print()
+    s = matrix(3, 5)
+    for q in s:
+        print(q)
+    print()
     s = matrix(3, 5, 9)
     for q in s:
         print(q)
@@ -223,7 +231,7 @@ def n13():
         else:
             n -= 1
             return a * power(a, n)
-    print(power(2, 2))
+    print(power(2, 4))
 
 
 def n14():
@@ -236,3 +244,6 @@ def n14():
 
 def n15():
     pass
+
+
+n14()

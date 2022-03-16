@@ -1,12 +1,12 @@
-def n1():#через словарь попробовать
+def n1():  # через словарь попробовать
     text = "very very very big text"
-    ar={}
+    ar = {}
     a = text.split()
     for x in a:
-        if x in ar: 
-            ar[x]+=1
+        if x in ar:
+            ar[x] += 1
         else:
-            ar[x]=1
+            ar[x] = 1
     print(ar)
 
 
@@ -85,6 +85,3 @@ def n5():
         b.append(temp)
 
     print(sorted(sorted(b, reverse=True), key=itemgetter(1)))
-
-n1()
-
