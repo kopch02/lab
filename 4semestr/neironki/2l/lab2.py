@@ -89,4 +89,5 @@ for sample in range(4):
     for i in range(3):
         t += w[2][i]*y[i][sample]
     z = 1/(1+pow(m.e, -t))
+    
     print(c[sample], "   ", z)

@@ -1,4 +1,6 @@
 {
+    "java.project.sourcePaths": ["src"],
+    "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
         "c:\\javafx-sdk-18\\lib\\javafx.base.jar",
@@ -9,9 +11,5 @@
         "c:\\javafx-sdk-18\\lib\\javafx.swing.jar",
         "c:\\javafx-sdk-18\\lib\\javafx.web.jar",
         "c:\\javafx-sdk-18\\lib\\javafx-swt.jar"
-    ],
-    "java.project.sourcePaths": [
-        "4semestr/iap/lab2/javafx/num1",
-        "4semestr/iap/lab2/javafx/num2"
     ]
 }
