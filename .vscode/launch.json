@@ -6,6 +6,30 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch test/App",
+            "request": "launch",
+            "vmArgs": "--module-path C:/javafx-sdk-18/lib --add-modules javafx.controls,javafx.fxml",
+            "mainClass": "test/App",
+            "projectName": "lab_f62c5a37"
+        },
+        {
+            "type": "java",
+            "name": "Launch num3",
+            "request": "launch",
+            "vmArgs": "--module-path C:/javafx-sdk-18/lib --add-modules javafx.controls,javafx.fxml",
+            "mainClass": "num3",
+            "projectName": "lab_f62c5a37"
+        },
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "vmArgs": "--module-path C:/javafx-sdk-18/lib --add-modules javafx.controls,javafx.fxml",
+            "mainClass": "App",
+            "projectName": "lab_f62c5a37"
+        },
+        {
+            "type": "java",
             "name": "Launch num2",
             "request": "launch",
             "vmArgs": "--module-path C:/javafx-sdk-18/lib --add-modules javafx.controls,javafx.fxml",

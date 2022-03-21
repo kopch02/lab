@@ -6,7 +6,15 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch num2",
+            "request": "launch",
+            "mainClass": "num2",
+            "projectName": "javafx_57abc4e3"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
+            "vmArgs": "--module-path C:/javafx-sdk-18/lib --add-modules javafx.controls,javafx.fxml",
             "request": "launch",
             "mainClass": "${file}"
         },

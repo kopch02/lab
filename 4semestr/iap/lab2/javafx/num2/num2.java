@@ -99,6 +99,10 @@ public class num2 extends Application {
 
             }
         });
+        view_apchi.setOpacity(0);
+        view_chupa.setOpacity(0);
+        view_nezuko.setOpacity(0);
+
         primarystage.show();
         
     }
