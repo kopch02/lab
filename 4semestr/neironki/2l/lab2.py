@@ -6,7 +6,7 @@ x2 = [0, 1, 0, 1]
 x = [x0, x1, x2]
 
 wx1 = [0.1, -0.05, 0.05]
-wx2 = [0.1, -0.1, 0.01]
+wx2 = [0.03, -0.1, 0.01]
 wy = [-0.05, -0.01, -0.05]
 w = [wx1, wx2, wy]
 
@@ -24,9 +24,9 @@ q = 0
 r = 0
 t = 0
 
-ly = 0.1
+ly = 1
 
-for epoh in range(10000):
+for epoh in range(100000):
     E = 0
     for sample in range(4):
         z = 0
@@ -65,11 +65,27 @@ for epoh in range(10000):
             w[0][i] += ly*x[i][sample]*e1
             w[1][i] += ly*x[i][sample]*e2
             
-    for i in range(4):
-        e = 0.5*pow(c[i]-z, 2)
+    for sample in range(4):
+        q=0
+        r=0
+        t=0
+        
+        for i in range(3):
+            q += w[0][i]*x[i][sample]
+        y1[sample] = 1/(1+pow(m.e, -q))
+
+        for i in range(3):
+            r += w[1][i]*x[i][sample]
+        y2[sample] = 1/(1+pow(m.e, -r))
+
+        for i in range(3):
+            t += w[2][i]*y[i][sample]
+        z = 1/(1+pow(m.e, -t))
+        
+        e = 0.5*pow(c[sample]-z, 2)
         E += e
         
-    if epoh % 100 == 0:
+    if epoh % 1000 == 0:
         print(E/4)
 
 
@@ -79,6 +95,10 @@ for sample in range(4):
     y1[sample] = 0
     y2[sample] = 0
 
+    q=0
+    r=0
+    t=0
+    
     for i in range(3):
         q += w[0][i]*x[i][sample]
     y1[sample] = 1/(1+pow(m.e, -q))

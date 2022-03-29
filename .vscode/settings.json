@@ -11,10 +11,8 @@
         "c:\\javafx-sdk-18\\lib\\javafx-swt.jar"
     ],
     "java.project.sourcePaths": [
-        "4semestr/iap/lab2/javafx/num3",
         "4semestr/iap/lab2/javafx/num2",
         "4semestr/iap/lab2/javafx/num1",
-        "4semestr/iap/lab2/javafx/demo/src/main/java/test",
-        "4semestr/iap/lab2/javafx/test/demo/src/main/java/num"
+        "4semestr/iap/lab2/javafx/num3"
     ]
 }
