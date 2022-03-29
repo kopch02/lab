@@ -94,25 +94,14 @@ def num8():
 
 def num9():
     def arithmetic_operation(o):
-        def plus(a, b):
-            return a + b
-
-        def minus(a, b):
-            return a-b
-
-        def devision(a, b):
-            return a/b
-
-        def mult(a, b):
-            return a*b
         if o == "+":
             return lambda x, y: x + y
         if o == "-":
-            return minus
+            return lambda x, y: x - y
         if o == "/":
-            return devision
+            return lambda x, y: x / y
         if o == "*":
-            return mult
+            return lambda x, y: x * y
 
     operation = arithmetic_operation("+")
     print(operation(1, 4))
@@ -136,7 +125,8 @@ def num10():  # через all
             return True
         else:
             return False
-    values = [8, 4, 10, 7]
+    values = [8, 4, 10, 4]
+    print(values)
     if same_by(lambda x: x % 2 == 0, values):
         print("same")
     else:
@@ -160,46 +150,50 @@ def num11():
 def num12():
     stroka = input("->")
     print(*sorted(stroka.split(), key=str.lower))
-        
-    
+
+
 def num13():
     a = [3, 6, -8, -78, 1, 23, -45, 9]
     print(sorted(a, key=lambda x: -abs(x)))
-    
+
 
 def num14():
     pass
 
+
 def num15():
     print(not all([1, 2, 3, 4, 5, 6, 7, 0]))
-    
+
+
 def num16():
     pass
 
+
 def num17():
     from copy import deepcopy
-    m1=[]
-    m2=[]
-    m3=[]
-    matrix=[m1,m2,m3]
+    m1 = []
+    m2 = []
+    m3 = []
+    matrix = [m1, m2, m3]
     for x in range(3):
-        temp=list(input(f"{x+1}строка->").replace(" ",""))
+        temp = list(input(f"{x+1}строка->").replace(" ", ""))
         for i in temp:
             matrix[x].append(int(i))
-    s=sum(p for p in m1)
-    temp=deepcopy(matrix)
+    s = sum(p for p in m1)
+    temp = deepcopy(matrix)
     for q in range(3):
         matrix[q].clear()
         for j in range(3):
             matrix[q].append(temp[j][q])
-    matrix+=temp
+    matrix += temp
     for x in matrix:
-        if s==sum(x):
+        if s == sum(x):
             continue
         else:
             print("квадрат не магический")
             quit()
     print("квадрат магический")
-    
+
+
 def num18():
     pass
