@@ -196,4 +196,32 @@ def num17():
 
 
 def num18():
-    pass
+    def check_password(func):
+        password = "qwer"
+
+        def wrapped(n):
+            nonlocal password_ent
+            if not password_ent:
+                password_in = input("Пароль:")
+                password_ent = True
+                if password_in == password:
+                    return func(n)
+                else:
+                    print("В доступе отказано")
+                    return
+            else:
+                return func(n)
+        return wrapped
+
+    password_ent = False
+
+    @check_password
+    def fibo_numbers(n):
+        if n == 1 or n == 2:
+            return 1
+        else:
+            return fibo_numbers(n - 1) + fibo_numbers(n - 2)
+
+    print(fibo_numbers(int(input("Число Фибоначчи №:"))))
+
+num18()
