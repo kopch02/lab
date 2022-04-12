@@ -5,7 +5,7 @@ x0=1
 x1=[0]
 c=[]
 y=[]
-ly=0.1
+ly=0.01
 n=5
 
 for x in range(n):
@@ -22,9 +22,9 @@ for x in range(n-2):
     g+=s
 x1.append(1)
 for x in range(n):
-    c.append(m.pow(x1[x],2))
+    c.append(m.sin(x1[x]))
 
-for epoh in range(100000):
+for epoh in range(100000+1):
     E=0
     for sample in range(n):
     
@@ -35,12 +35,12 @@ for epoh in range(100000):
             temp=0
             for i in range(2):
                 temp += wx[neiron][i]*x0*x1[sample]
-            y[neiron] = 1/(1+pow(m.e, -temp))
+            y[neiron] = 1/(1+m.exp(-temp))
         temp=0
         
         for i in range(n):
             temp += wy[i]*y[i]
-        z = 1/(1+pow(m.e, -temp))
+        z = 1/(1+m.exp(-temp))
         
         e = c[sample]-z
         
@@ -52,6 +52,7 @@ for epoh in range(100000):
             for x in range(2):
                 e=wy[neiron]*delta*(y[neiron]*(1-y[neiron]))
                 wx[neiron][x]+=ly*e*x1[x]
+                
     for sample in range(4):
         for x in range(n):
             y[x]=0
@@ -59,17 +60,18 @@ for epoh in range(100000):
             temp=0
             for i in range(2):
                 temp += wx[neiron][i]*x0*x1[sample]
-            y[neiron] = 1/(1+pow(m.e, -temp))
+            y[neiron] = 1/(1+m.exp(-temp))
         temp=0
         for i in range(n):
             temp += wy[i]*y[i]
-        z = 1/(1+pow(m.e, -temp))
+        z = 1/(1+m.exp(-temp))
         
         e = 0.5*pow(c[sample]-z, 2)
         E += e
         
-    if epoh % 500 == 0:
+    if epoh % 5000 == 0:
         print(E/4)
+        print("z=",z)
 for sample in range(n):
     for x in range(n):
             y[x]=0
@@ -77,11 +79,11 @@ for sample in range(n):
         temp=0
         for i in range(2):
             temp += wx[neiron][i]*x0*x1[sample]
-        y[neiron] = 1/(1+pow(m.e, -temp))
+        y[neiron] = 1/(1+m.exp(-temp))
     temp=0
     for i in range(n):
         temp += wy[i]*y[i]
-    z = 1/(1+pow(m.e, -temp))
+    z = 1/(1+m.exp(-temp))
     
     print(round(c[sample],4), "   ", round(z,4))
 print(x1)
