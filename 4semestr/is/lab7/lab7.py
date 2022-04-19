@@ -270,7 +270,6 @@ def num13():
     main_hero.hit(armored_swordsman)
     main_hero.hit(armored_swordsman)
     
-    
 def num14():
     class User(object):
         def __init__(self):
@@ -354,3 +353,4 @@ def num14():
             print("вы попытались ввести слово, там где нужно вводить цифры!!")
         
     
+num14()
