@@ -38,56 +38,55 @@ for epoh in range(100000):
         y2[sample] = 0
 
         for i in range(3):
-            q += w[0][i]*x[i][sample]
-        y1[sample] = 1/(1+pow(m.e, -q))
+            q += w[0][i] * x[i][sample]
+        y1[sample] = 1 / (1 + pow(m.e, -q))
 
         for i in range(3):
-            r += w[1][i]*x[i][sample]
-        y2[sample] = 1/(1+pow(m.e, -r))
+            r += w[1][i] * x[i][sample]
+        y2[sample] = 1 / (1 + pow(m.e, -r))
 
         for i in range(3):
-            t += w[2][i]*y[i][sample]
-        z = 1/(1+pow(m.e, -t))
+            t += w[2][i] * y[i][sample]
+        z = 1 / (1 + pow(m.e, -t))
 
         # z=w[1][0]*y[0][sample]+w[1][1]*y[1][sample]+w[1][2]*y[2][sample]
 
-        e = c[sample]-z
+        e = c[sample] - z
 
-        delta = e*(z*(1-z))
-
-        for i in range(3):
-            w[2][i] += ly*y[i][sample]*delta
-
-        e1 = w[2][1]*(y1[sample]*(1-y1[sample]))*delta
-        e2 = w[2][2]*(y2[sample]*(1-y2[sample]))*delta
+        delta = e * (z * (1 - z))
 
         for i in range(3):
-            w[0][i] += ly*x[i][sample]*e1
-            w[1][i] += ly*x[i][sample]*e2
-            
+            w[2][i] += ly * y[i][sample] * delta
+
+        e1 = w[2][1] * (y1[sample] * (1 - y1[sample])) * delta
+        e2 = w[2][2] * (y2[sample] * (1 - y2[sample])) * delta
+
+        for i in range(3):
+            w[0][i] += ly * x[i][sample] * e1
+            w[1][i] += ly * x[i][sample] * e2
+
     for sample in range(4):
-        q=0
-        r=0
-        t=0
-        
-        for i in range(3):
-            q += w[0][i]*x[i][sample]
-        y1[sample] = 1/(1+pow(m.e, -q))
+        q = 0
+        r = 0
+        t = 0
 
         for i in range(3):
-            r += w[1][i]*x[i][sample]
-        y2[sample] = 1/(1+pow(m.e, -r))
+            q += w[0][i] * x[i][sample]
+        y1[sample] = 1 / (1 + pow(m.e, -q))
 
         for i in range(3):
-            t += w[2][i]*y[i][sample]
-        z = 1/(1+pow(m.e, -t))
-        
-        e = 0.5*pow(c[sample]-z, 2)
+            r += w[1][i] * x[i][sample]
+        y2[sample] = 1 / (1 + pow(m.e, -r))
+
+        for i in range(3):
+            t += w[2][i] * y[i][sample]
+        z = 1 / (1 + pow(m.e, -t))
+
+        e = 0.5 * pow(c[sample] - z, 2)
         E += e
-        
-    if epoh % 1000 == 0:
-        print(E/4)
 
+    if epoh % 1000 == 0:
+        print(E / 4)
 
 for sample in range(4):
     z = 0
@@ -95,19 +94,19 @@ for sample in range(4):
     y1[sample] = 0
     y2[sample] = 0
 
-    q=0
-    r=0
-    t=0
-    
-    for i in range(3):
-        q += w[0][i]*x[i][sample]
-    y1[sample] = 1/(1+pow(m.e, -q))
-    for i in range(3):
-        r += w[1][i]*x[i][sample]
-    y2[sample] = 1/(1+pow(m.e, -r))
+    q = 0
+    r = 0
+    t = 0
 
     for i in range(3):
-        t += w[2][i]*y[i][sample]
-    z = 1/(1+pow(m.e, -t))
-    
+        q += w[0][i] * x[i][sample]
+    y1[sample] = 1 / (1 + pow(m.e, -q))
+    for i in range(3):
+        r += w[1][i] * x[i][sample]
+    y2[sample] = 1 / (1 + pow(m.e, -r))
+
+    for i in range(3):
+        t += w[2][i] * y[i][sample]
+    z = 1 / (1 + pow(m.e, -t))
+
     print(c[sample], "   ", z)

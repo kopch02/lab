@@ -1,4 +1,5 @@
 import numpy as np
+from PIL import Image
 
 
 def num1():
@@ -57,7 +58,17 @@ def num2():
 def num3():
     def super_sort(rows, cols):
         a =np.random.randint(0,100,(rows,cols))
-        print(a)
+        b=a.copy()
+        b[1::2].sort()#чётные по возростанию
+        b[::2,::-1].sort()#не чётные по убыванию
+        return (a,b)
         
-    super_sort(10,10)
-num1()
+    print(*super_sort(10,10))
+
+
+def num4():
+    def bw_convert(image):
+        r,g,b=(Image.open(image)).split()
+        c=0.2989*r+0.5870*g+0.1140*b
+        Image.fromarray(np.uint8(c)).save('r2.png')
+    bw_convert("4semestr\is\lab8\kek_dimas.png")
