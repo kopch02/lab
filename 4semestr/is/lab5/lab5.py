@@ -233,7 +233,7 @@ def n13():
             return a * power(a, n)
     print(power(2, 4))
 
-
+n13()
 def n14():
     def recursive_len(lis):
         if not lis:
@@ -246,4 +246,3 @@ def n15():
     pass
 
 
-n14()
