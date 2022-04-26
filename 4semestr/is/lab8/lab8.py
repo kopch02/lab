@@ -47,6 +47,9 @@ def num1():
     print(b)
 
 
+num1()
+
+
 def num2():
 
     def make_field(size):
@@ -78,13 +81,19 @@ def num4():
         bw = np.array(open_image)
         c = np.array((0.2989, 0.587, 0.114))
         resul = np.round(bw.dot(c))
-        Image.fromarray(resul).convert("RGB").save("4semestr\is\lab8\\result.png", "png")
+        Image.fromarray(resul).convert("RGB").save(
+            "4semestr\is\lab8\\result.png", "png")
         open_image.close()
 
     bw_convert("4semestr\is\lab8\mem.jpg")
 
+
 def num5():
-    table = np.genfromtxt("4semestr\is\lab8\ABBREV.csv", delimiter=";",dtype=None, names=True, encoding="utf8")
+    table = np.genfromtxt("4semestr\is\lab8\ABBREV.csv",
+                          delimiter=";",
+                          dtype=None,
+                          names=True,
+                          encoding="utf8")
     name = table["Shrt_Desc"]
     cal = table["Energ_Kcal"]
     sugar = table["Sugar_Tot"]
@@ -99,49 +108,49 @@ def num5():
 def num6():
     from random import randint
     from os import stat
-    file=open("4semestr\is\lab8\\file_num6.txt","r+")
-    lines=[]
+    file = open("4semestr\is\lab8\\file_num6.txt", "r+")
+    lines = []
     try:
         for line in file:
             lines.append(line)
-        print(lines[randint(0,len(lines)-1)])
+        print(lines[randint(0, len(lines) - 1)])
     except:
         print("errors")
     file.close()
 
 
 def num8():
+
     def revers(in_file):
         data = in_file.read()
-        out=open("4semestr\is\lab8\\num8_files\output.dat","bw")
+        out = open("4semestr\is\lab8\\num8_files\output.dat", "bw")
         out.write(data[::-1])
-    in_file=open("4semestr\is\lab8\\num8_files\input.dat","br")
+
+    in_file = open("4semestr\is\lab8\\num8_files\input.dat", "br")
     revers(in_file)
 
 
 def num9():
-    file=open("4semestr\is\lab8\\num9_files\input.txt")
-    zeros=0
-    negativ=0
-    positiv=0
+    file = open("4semestr\is\lab8\\num9_files\input.txt")
+    zeros = 0
+    negativ = 0
+    positiv = 0
     for line in file:
-        temp=line.split()
+        temp = line.split()
         for token in temp:
-            token=int(token)
-            if type(token)==int or type(token)==float:
-                if token> 0:
-                    positiv+=1
-                elif token< 0:
-                    negativ+=1
+            token = int(token)
+            if type(token) == int or type(token) == float:
+                if token > 0:
+                    positiv += 1
+                elif token < 0:
+                    negativ += 1
                 else:
-                    zeros+=1
+                    zeros += 1
     file.close()
-    file2=open("4semestr\is\lab8\\num9_files\output.txt","r+")
-    sum=positiv+negativ+zeros
-    file2.write(str(sum)+"\n")
-    file2.write("1 - "+str(positiv)+"\n")
-    file2.write("-1 - "+str(negativ)+"\n")
-    file2.write("0 - "+str(zeros)+"\n")
+    file2 = open("4semestr\is\lab8\\num9_files\output.txt", "r+")
+    sum = positiv + negativ + zeros
+    file2.write(str(sum) + "\n")
+    file2.write("1 - " + str(positiv) + "\n")
+    file2.write("-1 - " + str(negativ) + "\n")
+    file2.write("0 - " + str(zeros) + "\n")
     file2.close()
-
-
