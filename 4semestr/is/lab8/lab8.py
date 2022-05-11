@@ -47,7 +47,6 @@ def num1():
     print(b)
 
 
-num1()
 
 
 def num2():
@@ -105,9 +104,10 @@ def num5():
     print("Most vitamin C:", name[len(table) - np.argmax(vit_c)])
 
 
+
+
 def num6():
     from random import randint
-    from os import stat
     file = open("4semestr\is\lab8\\file_num6.txt", "r+")
     lines = []
     try:
@@ -117,7 +117,7 @@ def num6():
     except:
         print("errors")
     file.close()
-
+num6()
 
 def num8():
 
@@ -147,6 +147,8 @@ def num9():
                 else:
                     zeros += 1
     file.close()
+
+    
     file2 = open("4semestr\is\lab8\\num9_files\output.txt", "r+")
     sum = positiv + negativ + zeros
     file2.write(str(sum) + "\n")

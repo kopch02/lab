@@ -29,7 +29,6 @@ def num4_1():
 def num4_2():
     print(*[x/2 for x in range(30) if x > 17])
 
-
 def num5():
     def factorials(n):
         s = 1
@@ -223,5 +222,3 @@ def num18():
             return fibo_numbers(n - 1) + fibo_numbers(n - 2)
 
     print(fibo_numbers(int(input("Число Фибоначчи №:"))))
-
-num18()

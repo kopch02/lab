@@ -3,8 +3,7 @@ from email import message
 from http import server
 from tkinter import SE
 
-from pyparsing import ParseExpression
-from requests import delete
+
 
 
 def num1():
