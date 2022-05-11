@@ -1,6 +1,6 @@
 import math as m
 import random as ran
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import numpy as np
 
 
@@ -9,7 +9,7 @@ x1=[0]
 c=[]
 y=[]
 ly=0.01
-n=20
+n=10
 
 for x in range(n):
     y.append(0)
@@ -27,13 +27,14 @@ x1.append(1)
 for x in range(n):
     c.append(m.sin(x1[x]))
 
-for epoh in range(50000+1):
+for epoh in range(100000+1):
     E=0
     for sample in range(n):
         for neiron in range(n):
             temp=0
-            for i in range(2):
-                temp += wx[neiron][i]*x0*x1[sample]
+            
+            temp += wx[neiron][0]*x0+wx[neiron][1]*x1[sample]
+
             y[neiron] = 1/(1+m.exp(-temp))
         temp=0
         
@@ -55,8 +56,8 @@ for epoh in range(50000+1):
         
         for neiron in range(n):
             temp=0
-            for i in range(2):
-                temp += wx[neiron][i]*x0*x1[sample]
+            
+            temp += wx[neiron][0]*x0+wx[neiron][1]*x1[sample]
             y[neiron] = 1/(1+m.exp(-temp))
         temp=0
         for i in range(n):
@@ -75,8 +76,8 @@ for sample in range(n):
             y[x]=0
     for neiron in range(n):
         temp=0
-        for i in range(2):
-            temp += wx[neiron][i]*x0*x1[sample]
+        temp += wx[neiron][0]*x0+wx[neiron][1]*x1[sample]
+        
         y[neiron] = 1/(1+m.exp(-temp))
     temp=0
     for i in range(n):
@@ -94,14 +95,11 @@ xgraf=np.linspace(0,2.0*np.pi,101)
 ygraf=np.sin(xgraf)
 
 
-'''
 plt.plot(xgraf,ygraf,color="r",label="sin")
 plt.plot(x1,zg,color="blue",label="sin_neyro")
-
 plt.xticks(xgraf_title)
 plt.yticks(ygraf_title)
 plt.legend()
 plt.grid()
 plt.axis([0,6.5,-1.1,1.1])
 plt.show()
-'''
