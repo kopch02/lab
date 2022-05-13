@@ -35,14 +35,6 @@ def echo(update, context):
     
     if update.message.text == "qwe":
         update.message.reply_text("zxc")
-
-    elif update.message.from_user.username=="reqfis":
-        update.message.reply_text("артём, тебе никто не ответит(((")
-        print(update.message.from_user)
-
-    elif update.message.from_user.username=="kiradessous":
-        update.message.reply_text("гебель не балуйся")
-        print(update.message.from_user)
         
     else:
         update.message.reply_text(update.message.text)
