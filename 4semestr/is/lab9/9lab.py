@@ -2,6 +2,7 @@ from telegram.ext import Updater, MessageHandler, Filters, CommandHandler
 from telegram import InlineKeyboardMarkup, ReplyKeyboardMarkup, ReplyKeyboardRemove
 from datetime import datetime, date
 from random import randint
+from config import telegram_token
 
 reply_keyboard = [['/time', '/date'], 
                     ['/dice', '/timer']]
@@ -145,8 +146,7 @@ def unset_timer(update, context):
                         
 
 def main():
-    updater = Updater('TOKEN??????',
-                      use_context=True)
+    updater = Updater(telegram_token,use_context=True)
     dp = updater.dispatcher
     
     dp.add_handler(CommandHandler("start", tg_start))
