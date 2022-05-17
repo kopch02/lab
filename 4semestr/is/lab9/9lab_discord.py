@@ -58,7 +58,7 @@ async def on_message( message):
         await message.channel.send(file=picture)
         file.close()
     else:
-        await message.channel.send("автоответчик, на хуйню")
+        await message.channel.send("автоответчик")
         return
 
 
