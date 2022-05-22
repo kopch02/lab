@@ -172,7 +172,7 @@ def button(update, _):
 
     query.answer()
     if variant =="1_dice":
-        query.edit_message_text(text=str(randint(1, 6)))
+        query.message.reply_text(str(randint(1, 6)))
     elif variant =="2_dice":
         query.message.reply_text(str(randint(1, 6)) + "  " + str(randint(1, 6)))
     elif variant =="3_dice":
