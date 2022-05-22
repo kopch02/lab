@@ -89,15 +89,34 @@ for epoch in range(epochs):
     if E < min_E:
         min_E = E
         min_epoch = epoch
- 
-np.save("w_ji.npy", w_ji)
-np.save("w_kj.npy", w_kj)
+
+
  
 np.set_printoptions(suppress=True)
 print(z)
 print(f"min E: {min_E} at epoch {min_epoch}")
- 
- 
+
+# работа на 1000 точках 
+works_points=10000
+
+works = list(points(works_points))
+x = [[1, p[X], p[Y]] for p in works]
+
+z=[]
+
+for batch in range(works_points//batch_size):
+    x_b = x[batch*batch_size:(batch+1)*batch_size]
+    
+    #forward
+    y = sigmoid(np.dot(x_b, w_ji))
+    y = np.hstack((np.array([1]*batch_size)[:, np.newaxis], y))
+    z_b = sigmoid(np.dot(y, w_kj))  #6x2
+    z = np.append(z, z_b)
+
+z = np.reshape(z, (works_points, out_size))
+
+#отрисовка
+
 circle = plt.Circle((0.5, 0.5), math.sqrt(RADIUS_SQRT), color="red", alpha=0.1)
  
 ax = plt.gca()
@@ -108,7 +127,7 @@ ax.set_ylim((0, 1))
 ax.add_patch(circle)
 ax.set_aspect('equal')
  
-p_x, p_y = zip(*samples)
+p_x, p_y = zip(*works)
 z_x, z_y = zip(*z)
  
 ans_x = list(map(round, z_x))
@@ -121,6 +140,6 @@ for i in ans_x:
     else:
         colors.append("b")
  
-ax.scatter(p_x, p_y, c=colors)
+ax.scatter(p_x, p_y, c=colors,s=13)
  
-plt.savefig("graph.png", dpi=300)
+plt.savefig("4semestr\\neironki\\4lab\\graph.png", dpi=300)
