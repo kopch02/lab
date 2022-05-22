@@ -1,8 +1,16 @@
-from telegram.ext import Updater, MessageHandler, Filters, CommandHandler
-from telegram import InlineKeyboardMarkup, ReplyKeyboardMarkup, ReplyKeyboardRemove
+from telegram.ext import Updater, MessageHandler, Filters, CommandHandler, ConversationHandler ,CallbackQueryHandler
+from telegram import CallbackQuery, InlineKeyboardMarkup, ReplyKeyboardMarkup, ReplyKeyboardRemove, InlineKeyboardButton
 from datetime import datetime, date
 from random import randint
 from config import telegram_token
+
+start_text='''Привет, я обычный бот и вот, что я могу:
+Повторять все твои сообщения, если я не знаю, что с ними делать
+Говорить текущую дату и время
+Бросать кубики
+Ставить таймер
+
+В будующем я смогу больше!'''
 
 reply_keyboard = [['/time', '/date'], 
                     ['/dice', '/timer']]
@@ -24,7 +32,7 @@ markup = ReplyKeyboardMarkup(reply_keyboard,
 
 
 def tg_start(update, context):
-    update.message.reply_text("Что вам нужно?", reply_markup=markup)
+    update.message.reply_text(start_text, reply_markup=markup)
 
 
 def close_keyboard(update, context):
@@ -70,7 +78,7 @@ def twinty_sided(update, context):
 
 
 def timer(update, context):
-    update.message.reply_text("нсколько поставить таймер?",
+    update.message.reply_text("на сколько поставить таймер?"+"\n вы можете использовать /set 'нужное вам количество секунд'",
                               reply_markup=markup_timer)
 
 
@@ -102,14 +110,21 @@ def set_timer(update, context):
         print(context.chat_data)
         if due == 30:
             new_job = context.job_queue.run_once(callback30, due, context=chat_id)
-        if due == 60:
+        elif due == 60:
             new_job = context.job_queue.run_once(callback60, due, context=chat_id)
-        if due == 300:
+        elif due == 300:
             new_job = context.job_queue.run_once(callback300, due, context=chat_id)
+        else:
+            new_job = context.job_queue.run_once(callback, due, context=chat_id)
         context.chat_data['job'] = new_job
         update.message.reply_text(f'Вернусь через {due} секунд')
     except (IndexError, ValueError):
         update.message.reply_text('Использование: /set <секунд>')
+
+
+def callback(context):
+    job = context.job
+    context.bot.send_message(job.context, text="время истекло")
 
 
 def callback30(context):
@@ -137,6 +152,33 @@ def unset_timer(update, context):
     update.message.reply_text('Хорошо, вернулся сейчас!')
                         
 
+def random_i(update, _):
+    keyboard_dice = [
+        [
+            InlineKeyboardButton("1 шестигранный", callback_data='1_dice'),
+            InlineKeyboardButton("2 шестигранных", callback_data='2_dice'),
+
+        ],
+        [   InlineKeyboardButton("1 двадцатигранный", callback_data='3_dice'),
+        ],
+    ]
+    reply_markup = InlineKeyboardMarkup(keyboard_dice)
+    update.message.reply_text('при выборе 6 гранного будет меняться это сообщение,\n а не отправляться новое\nкак лучше?\nКакой кубик бросить?:', reply_markup=reply_markup)
+
+
+def button(update, _):
+    query = update.callback_query
+    variant = query.data
+
+    query.answer()
+    if variant =="1_dice":
+        query.edit_message_text(text=str(randint(1, 6)))
+    elif variant =="2_dice":
+        query.message.reply_text(str(randint(1, 6)) + "  " + str(randint(1, 6)))
+    elif variant =="3_dice":
+        query.message.reply_text(str(randint(1, 20)))
+
+
 def main():
     updater = Updater(telegram_token,use_context=True)
     dp = updater.dispatcher
@@ -146,7 +188,7 @@ def main():
 
     dp.add_handler(CommandHandler("time", time_bot))
     dp.add_handler(CommandHandler("date", date_bot))
-    dp.add_handler(CommandHandler("dice", dice))
+    dp.add_handler(CommandHandler("dice", random_i))
     dp.add_handler(CommandHandler("timer", timer))
     dp.add_handler(CommandHandler("back", back))
 
@@ -156,6 +198,26 @@ def main():
 
     dp.add_handler(CommandHandler("set",set_timer))
     dp.add_handler(CommandHandler("reset", unset_timer, pass_chat_data=True))
+
+    dp.add_handler(CommandHandler("random",random_i))
+    updater.dispatcher.add_handler(CallbackQueryHandler(button))
+
+    #conv_handler = ConversationHandler(
+    #    entry_points=[CommandHandler('start', tg_start)],
+    #    states={ # словарь состояний разговора, возвращаемых callback функциями
+    #        FIRST: [
+    #            CallbackQueryHandler(one, pattern='^' + str(ONE) + '$'),
+    #            CallbackQueryHandler(two, pattern='^' + str(TWO) + '$'),
+    #            CallbackQueryHandler(three, pattern='^' + str(THREE) + '$'),
+    #            CallbackQueryHandler(four, pattern='^' + str(FOUR) + '$'),
+    #        ],
+    #        SECOND: [
+    #            CallbackQueryHandler(start_over, pattern='^' + str(ONE) + '$'),
+    #            CallbackQueryHandler(end, pattern='^' + str(TWO) + '$'),
+    #        ],
+    #    },
+    #    fallbacks=[CommandHandler('start', tg_start)],
+    #)
 
     text_handler = MessageHandler(Filters.text, echo)
     dp.add_handler(text_handler)
