@@ -1,4 +1,5 @@
 import requests
+import json
 #from geocode_key import api_key
 
 response = requests.get(f"https://static-maps.yandex.ru/1.x/?ll=37.620070,55.753630&size=450,450&z=13&l=map&pt=37.620070,55.753630,pmwtm1~37.64,55.76363,pmwtm99")
@@ -20,5 +21,24 @@ baikal=requests.get(f"https://static-maps.yandex.ru/1.x/?ll=107.6730584,53.40533
 baikonur=requests.get(f"https://static-maps.yandex.ru/1.x/?ll=63.286187,45.926092&size=550,450&l=sat&spn=0.03,0.03")
 
 
+jakytsk=requests.get("https://geocode-maps.yandex.ru/1.x/?apikey=d6bbd6bd-f99a-4ee6-aaac-612ed8eadbd8&format=json&geocode=якутск")
+magadan=requests.get("https://geocode-maps.yandex.ru/1.x/?apikey=d6bbd6bd-f99a-4ee6-aaac-612ed8eadbd8&format=json&geocode=магадан")
+magadan_json=json.loads(magadan.text)
+jakytsk_json=json.loads(jakytsk.text)
+jakytsk_pos=(jakytsk_json["response"]['GeoObjectCollection']["featureMember"][0]["GeoObject"]["Point"]["pos"]).split()
+magadan_pos=(magadan_json["response"]['GeoObjectCollection']["featureMember"][0]["GeoObject"]["Point"]["pos"]).split()
+if jakytsk_pos[1]>magadan_pos[1]:
+    print("первый город севернее")
+else:
+    print("второй город севернее")
 
-
+kemerovo=requests.get("https://geocode-maps.yandex.ru/1.x/?apikey=d6bbd6bd-f99a-4ee6-aaac-612ed8eadbd8&format=json&geocode=кемерово")
+toronto=requests.get("https://geocode-maps.yandex.ru/1.x/?apikey=d6bbd6bd-f99a-4ee6-aaac-612ed8eadbd8&format=json&geocode=торонто")
+kemerovo_json=json.loads(kemerovo.text)
+toronto_json=json.loads(toronto.text)
+toronto_pos=(toronto_json["response"]['GeoObjectCollection']["featureMember"][0]["GeoObject"]["Point"]["pos"]).split()
+kemerovo_pos=(kemerovo_json["response"]['GeoObjectCollection']["featureMember"][0]["GeoObject"]["Point"]["pos"]).split()
+if toronto_pos[1]<kemerovo_pos[1]:
+    print("первый город южнее")
+else:
+    print("второй город южнее")
