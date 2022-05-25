@@ -30,7 +30,6 @@ samples = list(points(sample_count))
 c = [(1,0) if hit(P[X], P[Y]) else (0,1) for P in samples]
 x = [[1, p[X], p[Y]] for p in samples]
 
-
 np.random.seed(1)
 wx = [[(np.random.random()-0.5)/2 for i in range(hidden_size)] for _ in range(input_size + bias)]
 wy = [[(np.random.random()-0.5)/2 for i in range(out_size)] for _ in range(hidden_size + bias)]
@@ -46,10 +45,12 @@ for epoh in range(epochs + 1):
         x_b = x[batch*batch_size:(batch+1)*batch_size]
         
         #forward
-        y = sigmoid(np.dot(x_b, wx))
+        y=np.dot(x_b, wx)
+        y = sigmoid(y)
         y = np.hstack((np.array([1]*batch_size)[:, np.newaxis], y))
 
-        z_b = sigmoid(np.dot(y, wy))  #6x2
+        z_b=np.dot(y, wy)
+        z_b = sigmoid(z_b)  #6x2
         #backward
         e = c_b - z_b  #6x2
         delta_out = e * (z_b * (1 - z_b))  #6x2
@@ -108,12 +109,20 @@ ans_x = list(map(round, z_x))
 ans_y = list(map(round, z_y))
  
 colors = []
-for i in ans_x:
-    if (i):
-        colors.append("r")
+
+
+for i in range(len(ans_x)):
+    if (ans_x[i]):
+        if not hit(x[i][1],x[i][2]):
+            colors.append("y")
+        else:
+            colors.append("r")
     else:
-        colors.append("b")
+        if hit(x[i][1],x[i][2]):
+            colors.append("g")
+        else:
+            colors.append("b")
  
-ax.scatter(p_x, p_y, c=colors,s=13)
+ax.scatter(p_x, p_y, c=colors,s=11)
  
 plt.savefig("4semestr\\neironki\\4lab\\graph.png", dpi=300)
