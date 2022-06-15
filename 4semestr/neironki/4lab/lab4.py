@@ -27,13 +27,14 @@ sample_count = 100
 
 epochs = 50000
 samples = list(points(sample_count))
+
 c = [(1,0) if hit(P[X], P[Y]) else (0,1) for P in samples]
 x = [[1, p[X], p[Y]] for p in samples]
+
 
 np.random.seed(1)
 wx = [[(np.random.random()-0.5)/2 for i in range(hidden_size)] for _ in range(input_size + bias)]
 wy = [[(np.random.random()-0.5)/2 for i in range(out_size)] for _ in range(hidden_size + bias)]
-y0 = np.zeros((6, 1)) + 1
 #тренировка
 for epoh in range(epochs + 1):
     if epoh % (epochs//10) == 0:
