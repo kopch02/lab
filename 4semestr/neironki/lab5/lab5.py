@@ -81,7 +81,7 @@ for epoh in range(epochs + 1):
     for i in range(sample_count):
         for k in range(10):
             temp+=c[i][k] - z[i][k]
-        E += 0.5 * (temp)**2
+        E += 0.5 * (temp/10)**2
         E /= sample_count
     if epoh % (epochs//10) == 0:
         print(f"E: {E}\n")
@@ -131,10 +131,3 @@ print("labels:\n")
 print(c[:20])
 print("z:\n")
 print(z[:20])
-
-tempc=np.nonzero(c[:20])
-tempz=np.nonzero(z[:20])
-
-
-for i in range(20):
-    print('c=',tempc[1][i],"    z=",tempz[1][i],)
