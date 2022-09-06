@@ -114,6 +114,10 @@ class num3(QWidget):
             self.label_1.setText("")
     
     def box2(self, state):
+
+        print(self.sender().text())
+
+
         if state == Qt.Checked:
             self.label_2.setText("Вторая строка ")
         else:
@@ -151,10 +155,10 @@ class num4(QWidget):
         x=0
         y=100
         for i in MORSE_CODE_DICT:
-            self.button_1 = QPushButton(self)
-            self.button_1.setGeometry(x, y,40,40)
-            self.button_1.setText(i)
-            self.button_1.clicked.connect(self.res)
+            self.button = QPushButton(self)
+            self.button.setGeometry(x, y,40,40)
+            self.button.setText(i)
+            self.button.clicked.connect(self.res)
             x+=40
             if x>=400:
                 x=0
@@ -171,6 +175,6 @@ class num4(QWidget):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    ex = num3()
+    ex = num1()
     ex.show()
     sys.exit(app.exec())
