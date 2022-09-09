@@ -7,6 +7,7 @@ from PyQt5.QtGui import QPixmap
 
 
 class num1(QWidget):
+
     def __init__(self):
         super().__init__()
         self.initUI()
@@ -18,7 +19,7 @@ class num1(QWidget):
         self.button_1.move(110, 80)
         self.button_1.setText("->")
         self.button_1.clicked.connect(self.swap)
-        self.button_mark=True
+        self.button_mark = True
 
         self.input_1 = QLineEdit(self)
         self.input_1.move(10, 40)
@@ -28,24 +29,24 @@ class num1(QWidget):
 
         self.show()
 
-
     def swap(self):
         if self.button_mark:
-            self.button_mark=False
+            self.button_mark = False
             self.button_1.setText("<-")
-            temp=self.input_2.text()
+            temp = self.input_2.text()
             self.input_2.setText(self.input_1.text())
             self.input_1.setText(temp)
 
         else:
-            self.button_mark=True
+            self.button_mark = True
             self.button_1.setText("->")
-            temp2=self.input_1.text()
+            temp2 = self.input_1.text()
             self.input_1.setText(self.input_2.text())
             self.input_2.setText(temp2)
 
 
 class num2(QWidget):
+
     def __init__(self):
         super().__init__()
         self.initUI()
@@ -57,17 +58,16 @@ class num2(QWidget):
         self.button_1.move(210, 60)
         self.button_1.setText("Вычислить")
         self.button_1.clicked.connect(self.res)
-        self.button_mark=True
+        self.button_mark = True
 
         self.input_1 = QLineEdit(self)
         self.input_1.move(10, 30)
 
         self.res_label = QLabel(self)
-        self.res_label.setGeometry(20,120,100,10)
+        self.res_label.setGeometry(20, 120, 100, 10)
         self.res_label.setText("Результат: ")
 
         self.show()
-
 
     def res(self):
         self.res_label.setText(f"Результат: {eval(self.input_1.text())}")
@@ -75,16 +75,17 @@ class num2(QWidget):
 
 
 class num3(QWidget):
+
     def __init__(self):
         super().__init__()
         self.initUI()
 
     def initUI(self):
-        funk={self.box1,self.box2,self.box3}
-        self.labels=[]
+        funk = {self.box1, self.box2, self.box3}
+        self.labels = []
 
-        y=0
-        n=1
+        y = 0
+        n = 1
 
         for i in funk:
             self.check = QCheckBox(str(n), self)
@@ -93,21 +94,20 @@ class num3(QWidget):
 
             label = QLabel(self)
             label.setText("")
-            label.setGeometry(40,y,150,15)
+            label.setGeometry(40, y, 150, 15)
             self.labels.append(label)
 
-            y+=30
-            n+=1
+            y += 30
+            n += 1
 
         self.show()
-
 
     def box1(self, state):
         if state == Qt.Checked:
             self.labels[0].setText("Первая строка ")
         else:
             self.labels[0].setText("")
-    
+
     def box2(self, state):
         if state == Qt.Checked:
             self.labels[1].setText("Вторая строка ")
@@ -121,78 +121,116 @@ class num3(QWidget):
             self.labels[2].setText("")
 
 
-MORSE_CODE_DICT = { '1':'.----', '2':'..---', '3':'...--',
-                    '4':'....-', '5':'.....', '6':'-....',
-                    '7':'--...', '8':'---..', '9':'----.',
-                    '0':'-----',
-                    'A':'.-', 'B':'-...',
-                    'C':'-.-.', 'D':'-..', 'E':'.',
-                    'F':'..-.', 'G':'--.', 'H':'....',
-                    'I':'..', 'J':'.---', 'K':'-.-',
-                    'L':'.-..', 'M':'--', 'N':'-.',
-                    'O':'---', 'P':'.--.', 'Q':'--.-',
-                    'R':'.-.', 'S':'...', 'T':'-',
-                    'U':'..-', 'V':'...-', 'W':'.--',
-                    'X':'-..-', 'Y':'-.--', 'Z':'--..'
-                    }
+MORSE_CODE_DICT = {
+    '1': '.----',
+    '2': '..---',
+    '3': '...--',
+    '4': '....-',
+    '5': '.....',
+    '6': '-....',
+    '7': '--...',
+    '8': '---..',
+    '9': '----.',
+    '0': '-----',
+    'A': '.-',
+    'B': '-...',
+    'C': '-.-.',
+    'D': '-..',
+    'E': '.',
+    'F': '..-.',
+    'G': '--.',
+    'H': '....',
+    'I': '..',
+    'J': '.---',
+    'K': '-.-',
+    'L': '.-..',
+    'M': '--',
+    'N': '-.',
+    'O': '---',
+    'P': '.--.',
+    'Q': '--.-',
+    'R': '.-.',
+    'S': '...',
+    'T': '-',
+    'U': '..-',
+    'V': '...-',
+    'W': '.--',
+    'X': '-..-',
+    'Y': '-.--',
+    'Z': '--..'
+}
 
 
 class num4(QWidget):
+
     def __init__(self):
         super().__init__()
         self.initUI()
 
     def initUI(self):
-        x=0
-        y=100
+        x = 0
+        y = 100
         for i in MORSE_CODE_DICT:
             self.button = QPushButton(self)
-            self.button.setGeometry(x, y,40,40)
+            self.button.setGeometry(x, y, 40, 40)
             self.button.setText(i)
             self.button.clicked.connect(self.res)
-            x+=40
-            if x>=400:
-                x=0
-                y+=40
+            x += 40
+            if x >= 400:
+                x = 0
+                y += 40
 
         self.label = QLabel(self)
         self.label.setText("")
-        self.label.setGeometry(0,0,400,100)
+        self.label.setGeometry(0, 0, 400, 100)
 
         self.show()
+
     def res(self):
-        self.label.setText(self.label.text()+" "+MORSE_CODE_DICT[self.sender().text()])
+        self.label.setText(self.label.text() + " " +
+                           MORSE_CODE_DICT[self.sender().text()])
 
 
 class num5(QWidget):
+
     def __init__(self):
         super().__init__()
         self.initUI()
 
     def initUI(self):
-        self.setGeometry(300,300,500,350)
+        self.setGeometry(300, 300, 500, 350)
         self.setWindowTitle("меню")
 
-        paths=['5semestr\python\lab1\\img\\burger.jpeg','5semestr\python\lab1\\img\\napitok.jpg','5semestr\python\lab1\\img\\sup.jpg']
-        y=20
+        paths = [
+            '5semestr\python\lab1\\img\\burger.jpeg',
+            '5semestr\python\lab1\\img\\napitok.jpg',
+            '5semestr\python\lab1\\img\\sup.jpg'
+        ]
+        y = 20
         for i in paths:
             photo_label = QLabel(self)
             photo = QPixmap(i)
-            photo=photo.scaled(135,90)
+            photo = photo.scaled(135, 90)
             photo_label.setPixmap(photo)
-            photo_label.move(10,y)
-            y+=110
+            photo_label.move(10, y)
+            y += 110
 
-        y=65
-        phrase=("добавить бургер","добавить напиток","добавить суп")
-        price=("390₽","90₽","190₽")
-        #funk={self.box1,self.box2,self.box3}
-        self.labels=[]
+        y = 65
+        phrase = ("добавить бургер", "добавить напиток", "добавить суп")
+        price = ("390₽", "90₽", "190₽")
+        self.funk = [self.box1, self.box2, self.box3]
+        self.funk_spin = [self.spin_1, self.spin_2, self.spin_3]
+        self.labels = []
+        self.spins = []
+        self.sum = 0
+        self.s_1 = 0
+        self.s_2 = 0
+        self.s_3 = 0
 
         for i in range(3):
             self.check = QCheckBox(phrase[i], self)
             self.check.move(160, y)
-            self.check.stateChanged.connect(self.box1)
+            self.check.stateChanged.connect(self.funk[i])
             self.check.setStyleSheet('''
                 QCheckBox::indicator:unchecked {
                     image: url(5semestr/python/lab1/img/off.png);
@@ -204,38 +242,89 @@ class num5(QWidget):
 
             label = QLabel(self)
             label.setText(price[i])
-            label.setGeometry(160,y-30,50,15)
+            label.setGeometry(160, y - 30, 50, 15)
             self.labels.append(label)
 
-            y+=110
+            self.spin = QSpinBox(self)
+            self.spin.setMinimum(0)
+            self.spin.setSingleStep(1)
+            self.spin.move(330, y)
+            self.spin.hide()
+            self.spin.valueChanged.connect(self.funk_spin[i])
+            self.spins.append(self.spin)
 
-        self.widget_1 = QSpinBox(self)
-        self.widget_1.setMinimum(1)
-        self.widget_1.setSingleStep(1)
-        self.widget_1.move(330,50)
-        self.widget_1.hide()
+            y += 110
 
-        self.widget_2 = QSpinBox(self)
-        self.widget_2.setMinimum(1)
-        self.widget_2.setSingleStep(1)
-        self.widget_2.move(330,50)
-        self.widget_2.hide()
+        self.button = QPushButton(self)
+        self.button.move(410, 300)
+        self.button.setText("Вычислить")
+        self.button.clicked.connect(self.res)
 
-        self.widget_3 = QSpinBox(self)
-        self.widget_3.setMinimum(1)
-        self.widget_3.setSingleStep(1)
-        self.widget_3.move(330,50)
-        self.widget_3.hide()
+        self.label = QLabel(self)
+        self.label.setText("0₽")
+        self.label.setGeometry(410, 250, 90, 20)
 
         self.show()
 
-    def box1(self,state):
+    def box1(self, state):
         if state == Qt.Checked:
-            self.widget_1.show()
-        else:
-            self.widget_1.hide()
+            self.spins[0].show()
+            self.spins[0].setValue(1)
+            self.s_1 = self.spins[0].value() * 390
+            self.update()
 
-    
+        else:
+            self.spins[0].hide()
+            self.spins[0].setValue(0)
+            self.update()
+
+
+    def box2(self, state):
+        if state == Qt.Checked:
+            self.spins[1].show()
+            self.spins[1].setValue(1)
+            self.s_2 = self.spins[1].value() * 90
+            self.update()
+
+        else:
+            self.spins[1].hide()
+            self.spins[1].setValue(0)
+            self.update()
+
+
+    def box3(self, state):
+        if state == Qt.Checked:
+            self.spins[2].show()
+            self.spins[2].setValue(1)
+            self.s_3 = self.spins[2].value() * 190
+            self.update()
+
+        else:
+            self.spins[2].hide()
+            self.spins[2].setValue(0)
+            self.update()
+
+
+    def spin_1(self, value):
+        self.s_1 = value * 390
+        self.update()
+
+    def spin_2(self, value):
+        self.s_2 = value * 90
+        self.update()
+
+    def spin_3(self, value):
+        self.s_3 = value * 190
+        self.update()
+
+    def res(self):
+        self.sum = self.s_1 + self.s_2 + self.s_3
+        self.update()
+
+    def update(self):
+        self.sum = self.s_1 + self.s_2 + self.s_3
+        self.label.setText(str(self.sum) + "₽")
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
