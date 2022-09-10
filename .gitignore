@@ -8,6 +8,8 @@
 /Packages
 /wooork
 
+*.doc
+5semestr/parallel/test_parallel/include
 
 4semestr/is/lab9/config.py
 4semestr/is/lab9/telelog
