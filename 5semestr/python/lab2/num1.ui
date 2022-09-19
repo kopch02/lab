@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>393</width>
+    <height>274</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>20</y>
+     <width>331</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QRadioButton" name="radioButton_7">
+      <property name="text">
+       <string>красный</string>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">first</string>
+      </attribute>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QRadioButton" name="radioButton_6">
+      <property name="text">
+       <string>красный</string>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">mid</string>
+      </attribute>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QRadioButton" name="radioButton_3">
+      <property name="text">
+       <string>красный</string>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">last</string>
+      </attribute>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QRadioButton" name="radioButton_8">
+      <property name="text">
+       <string>Синий</string>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">first</string>
+      </attribute>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QRadioButton" name="radioButton_5">
+      <property name="text">
+       <string>Синий</string>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">mid</string>
+      </attribute>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QRadioButton" name="radioButton_2">
+      <property name="text">
+       <string>Синий</string>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">last</string>
+      </attribute>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QRadioButton" name="radioButton">
+      <property name="text">
+       <string>белый</string>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">first</string>
+      </attribute>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QRadioButton" name="radioButton_4">
+      <property name="text">
+       <string>белый</string>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">mid</string>
+      </attribute>
+     </widget>
+    </item>
+    <item row="2" column="2">
+     <widget class="QRadioButton" name="radioButton_9">
+      <property name="text">
+       <string>белый</string>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">last</string>
+      </attribute>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>140</y>
+     <width>121</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_3">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+ <buttongroups>
+  <buttongroup name="last"/>
+  <buttongroup name="mid"/>
+  <buttongroup name="first"/>
+ </buttongroups>
+</ui>
