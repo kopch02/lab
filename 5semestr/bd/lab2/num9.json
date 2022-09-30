@@ -1,0 +1,81 @@
+db.Student.insertMany(
+[{
+    "name":"ibragim",
+    "lastname":"kuznecov",
+    "otchestvo":"petrovich",
+    "year birth":2002,
+    "kurs":3,
+    "направление":"FIT",
+    "group":"FIT-204",
+    "language":["english"],
+    "disciplines":[{"name":"диффиринциальные уравнения",
+                    "semest":4,
+                    "score":4
+                    },
+                    {
+                    "name":"языки программирования",
+                    "semest":3,
+                    "score":5
+                    }
+                    ]
+},
+{
+    "name":"sergey",
+    "lastname":"zubin",
+    "otchestvo":"petrovich",
+    "year birth":2002,
+    "kurs":3,
+    "направление":"FIT",
+    "group":"FIT-204",
+    "language":["english","germany"],
+    "disciplines":[{"name":"диффиринциальные уравнения",
+    "semest":5,
+    "score":3
+    },
+    {
+    "name":"языки программирования",
+    "semest":1,
+    "score":4
+    }
+    ]
+},
+{
+    "name":"vasiliy",
+    "lastname":"petrov",
+    "otchestvo":"petrovich",
+    "year birth":2002,
+    "kurs":2,
+    "направление":"FIT",
+    "group":"FIT-204",
+    "language":["english"],
+    "disciplines":[{"name":"диффиринциальные уравнения",
+    "semest":5,
+    "score":5
+    },
+    {
+    "name":"языки программирования",
+    "semest":4,
+    "score":3
+    }
+    ]
+},
+{
+    "name":"ivan",
+    "lastname":"petrov",
+    "otchestvo":"petrovich",
+    "year birth":2002,
+    "kurs":4,
+    "направление":"FIT",
+    "group":"FIT-204",
+    "language":["english","germany"],
+    "disciplines":[{"name":"диффиринциальные уравнения",
+    "semest":4,
+    "score":4
+    },
+    {
+    "name":"языки программирования",
+    "semest":3,
+    "score":5
+    }
+    ]
+}])
