@@ -1,0 +1,21 @@
+{
+    "configurations":[
+        {
+            "name":"Win32",
+            "includePath":[
+                "${workspaceFolder}/**",
+                "C:\\Program Files\\MPICH2\\include"
+            ],
+            "defines":[
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath":"C:\\Users\\iskan\\gcc\\bin\\gcc.exe",
+            "cStandart":"gnu17",
+            "cppStandart":"gnu++14",
+            "intelSenseMode":"windows-gcc-x64"
+        }
+    ],
+    "version":4
+}

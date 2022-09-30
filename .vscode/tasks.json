@@ -1,0 +1,18 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "MPI build file",
+            "type": "shell",
+            "command":"gcc ${file} 'C:/Program Files/MPICH2/lib/mpi.lib' -I 'C:/Program Files/MPICH2/include' -o ${fileDirname}/${fileBasenameNoExtension}.exe",
+            "options": {
+                "cwd": "${workspaseFolder}"
+            },
+            "problemMatcher":["$gcc"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}

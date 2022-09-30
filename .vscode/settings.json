@@ -14,5 +14,9 @@
         "4semestr/iap/lab2/javafx/num2",
         "4semestr/iap/lab2/javafx/num1",
         "4semestr/iap/lab2/javafx/num3"
-    ]
+    ],
+    "files.associations": {
+        "ostream": "cpp",
+        "random": "cpp"
+    }
 }
