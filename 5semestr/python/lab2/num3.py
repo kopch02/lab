@@ -13,7 +13,7 @@ class num1(QWidget):
         uic.loadUi('num3.ui', self)  # Загружаем дизайн
         self.b1.clicked.connect(self.a)
     def a(self):
-        item = QListWidgetItem(self.lineEdit.text()+self.lineEdit_2.text())
+        item = QListWidgetItem(self.lineEdit.text()+"\t"+self.lineEdit_2.text())
         self.listWidget.addItem(item)
 
 
