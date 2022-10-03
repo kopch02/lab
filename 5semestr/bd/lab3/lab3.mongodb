@@ -34,4 +34,55 @@ use ("FirstDB");
 
 
 //num7_3
-db.Student.find({language :{$not:}});
+//db.Student.find();
+//db.Student.find({language :"english"});
+
+
+//num8
+/*
+db.Student.updateOne({name:"petr",last_name:"petrov"}, 
+{$set:{"year start": 2019}});
+
+db.Student.updateOne({name:"petr",last_name:"petrov"}, 
+{$set:{"disciplines": [
+      {
+        "name": "базы данных",
+        "semest": 4,
+        "score": 4
+      },
+      {
+        "name": "языки программирования",
+        "semest": 3,
+        "score": 5
+      }
+    ]}});
+
+db.Student.updateOne({name:"petr",last_name:"petrov"}, 
+{$unset:{"year birth": 2001}});
+
+db.Student.updateOne({name:"petr",last_name:"petrov"}, 
+{$unset:{"disciplines": [
+      {
+        "name": "базы данных",
+        "semest": 4,
+        "score": 4
+      },
+      {
+        "name": "языки программирования",
+        "semest": 3,
+        "score": 5
+      }
+    ]}});
+
+db.Student.find();
+*/
+
+
+//num9
+//db.Student.updateMany({},{$inc:{kurs: 1}});
+//db.Student.find();
+
+	
+//num10
+//db.Student.deleteOne({name : "marat",last_name: "iskandirov"});
+//db.Student.find();
