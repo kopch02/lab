@@ -34,8 +34,7 @@ use ("FirstDB");
 
 
 //num7_3
-//db.Student.find();
-//db.Student.find({language :"english"});
+//db.Student.find({language :{$nin:["english"]}});
 
 
 //num8
