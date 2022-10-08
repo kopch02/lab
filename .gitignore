@@ -10,7 +10,9 @@
 
 *.doc
 *.docx
-5semestr/parallel/test_parallel/include
+5semestr/parallel/*/include
+*.lib
+5semestr/parallel/*/*.exe
 
 4semestr/is/lab9/config.py
 4semestr/is/lab9/telelog
