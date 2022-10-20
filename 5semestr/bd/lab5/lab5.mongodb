@@ -1,0 +1,60 @@
+use ("FirstDB");
+
+
+db.EMPLOYEE_BLANK.find({email:{$regex: /gmail\.com$/}})
+
+
+db.EMPLOYEE_BLANK.find({email:{$not: /\w+@\w+\.\w+$/i}})
+
+
+db.EMPLOYEE_BLANK.find({yvlecenia:{$regex: /^п.*е$/i}})
+
+
+db.EMPLOYEE_BLANK.find({document:{$regex: / *404$/}})
+
+
+db.EMPLOYEE_BLANK.find({telefone_number:{$regex:/(?=3.*6)|(?=36)/}})
+
+
+db.EMPLOYEE_BLANK.find({telefone_number:{$regex:/\d\(\d{3}\)\d{3}(-\d{2}){2}/}})
+
+
+db.EMPLOYEE_BLANK.aggregate([
+    { $match: { email: {$regex: /(a.*v)|(v.*a)/i }} },
+    { $project: {
+        _id: 0,
+        name: { $concat: [ "$sername", " ", "$name", " ", "$father_name" ] },
+        yvlecenia: {$cond:{
+            if:{$isArray:"$yvlecenia"},
+                then:{$size:"$yvlecenia"},
+            else:0
+            }
+        }
+    }}
+])
+
+
+db.EMPLOYEE_BLANK.find({date_birth:{$regex:  /10\.\d+\.1987/i}})
+
+
+db.EMPLOYEE_BLANK.aggregate([
+    {$project: 
+        {
+            _id:0,
+            name:{ $concat: [ "$sername", " ", "$name", " ", "$father_name" ] },
+            age:{$dateDiff:{
+                startDate:{$toDate:"$date_birth"},
+                endDate: new Date(),
+                unit: "year"                
+            }}
+        }
+        
+    },
+    {$match:
+        {
+            age:{$gte:30}
+        }
+    }
+])
+
+
