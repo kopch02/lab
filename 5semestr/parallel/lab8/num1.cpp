@@ -31,10 +31,21 @@ int main(int argc, char *argv[])
 {
     int rank;
     int a = 22;
+    double t1, t2, td;
     MPI_Init(&argc, &argv);
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
-
-    broad(&a,0,1,MPI_INT);
+    if (rank == 0)
+    {
+        t1 = MPI_Wtime();
+        broad(&a,0,1,MPI_INT);
+        t2 = MPI_Wtime();
+        td = t2 - t1;
+        cout<<" time = "<<td<<endl;
+    }
+    else
+    {
+        broad(&a,0,1,MPI_INT);
+    }
 
     MPI_Finalize();
 
