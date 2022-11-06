@@ -1,0 +1,93 @@
+use("test")
+//num1
+db.Emps.find({
+    start_date:
+    {
+        $gte: new Date("1990-05-19"),
+        $lt: new Date("1991-05-26")
+    }
+},
+{
+    _id:0,
+    userid:1,
+    start_date:1
+}).sort({start_date:-1})
+
+//num2
+
+db.Emps.find({
+    salary:{
+        $not:{
+            $gte:1000,
+            $lt:2500
+        }
+    },
+    $or:[{"dept.number":31},{"dept.number":42},{"dept.number":50}]
+},
+{
+    _id:0,
+    last_name:1,
+    salary:1
+})
+
+//num3
+db.Emps.aggregate([
+    {
+        $project:{
+            "last_name":"$last_name",
+            "dayOfWeek":{$dayOfWeek:"$start_date"},
+            "count_month":{$dateDiff:{
+                startDate:"$start_date",
+                endDate:new Date(),
+                unit:"month"
+            }}
+        }
+    }
+]).sort({"count_month":-1})
+
+//num4
+db.Emps.aggregate([
+    {
+    $unwind:"$title"
+    },
+    {
+    $group:{
+      _id:'$title',
+      max_salary:{$max:'$salary'}
+    }
+    },
+    {
+        $sort: {
+          _id: 1
+        }
+    }
+])
+
+//num5
+db.Ords.aggregate([
+    {
+        $project:{
+            "count_products":{$size:"$products"}
+        }
+    }
+])
+
+//num6
+db.Emps.aggregate([
+    {
+        $match:{
+            salary:{$gte:1000}
+        }
+    },
+    {
+        $group:{
+            _id:'$manager',
+            min_salary:{$min:"$salary"}
+        }
+    },
+    {
+        $sort:{
+            "min_salary":1
+        }
+    }
+])
