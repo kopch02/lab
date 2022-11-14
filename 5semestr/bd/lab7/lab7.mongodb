@@ -1,0 +1,125 @@
+use("test")
+//num1
+db.Emps.aggregate([
+    {
+        $match:{
+            commission_pct:{$ne:null}
+        }
+    },
+    {
+        $lookup: {
+          from: "Regions",
+          localField: "dept.region",
+          foreignField: "_id",
+          as: "result"
+        }
+    },
+    {
+        $project:{
+            _id:0,
+            last_name:1,
+            "dept.name":1,
+            "result.name":1
+        }
+    }
+])
+
+//num2
+db.Emps.aggregate([
+    {
+        $match:{
+            last_name:"Smith"
+        }
+    },
+    {
+        $lookup: {
+          from: "Emps",
+          localField: "dept._id",
+          foreignField: "dept._id",
+          as: "emps"
+        }
+    },
+    {
+        $lookup: {
+          from: "Regions",
+          localField: "emps.dept.region",
+          foreignField: "_id",
+          as: "result"
+        }
+    },
+    {
+        $project:{
+            _id:0,
+            last_name:1,
+            "emps.last_name":1,
+            "emps.dept.name":1,
+            "result.name":1
+        }
+    }
+])
+
+//num3
+db.Ords.aggregate([
+    {
+        $match:{
+            date_ordered:ISODate("1992-08-31T16:00:00.000+00:00")
+        }
+    },
+    {
+        $project: {
+            _id:0,
+            "products.product._id":1,
+            "products.product.name":1,
+            "products.quantity":1
+        }
+    }
+])
+
+//num4
+db.Customers.aggregate([
+    {
+        $lookup: {
+          from: "Ords",
+          localField: "name",
+          foreignField: "customer.name",
+          as: "num_ord"
+        }
+    },
+    {
+        $project: {
+            name:1,
+            "num_ord._id":1
+        }
+    },
+    {
+        $sort:{
+            "num_ord.id":1
+        }
+    }
+])
+
+//num5
+db.Emps.aggregate([
+    {
+        $lookup: {
+          from: "Emps",
+          localField: "manager",
+          foreignField: "_id",
+          as: "num_ord"
+        }
+    },
+    {
+        $project: {
+            _id:0,
+            "имя сотрудника":"$last_name",
+            "номер сотрудника":"$_id",
+            "фамилия менеджера":"$num_ord.last_name",
+            "номер менеджера":"num_ord._id"
+        }
+    }
+])
+
+
+
+
+
