@@ -9,72 +9,53 @@ int main(int argc, char *argv[])
 {
     int rank;
     int size;
-    int i, j, s = 0;
-    int n;
+    int n = 10, i, s = 0;
+    MPI_Status stat;
     MPI_Init(&argc, &argv);
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     MPI_Comm_size(MPI_COMM_WORLD, &size);
-
-    if (rank == 0)
-    {
-        cin >> n;
-    }
-
-    MPI_Bcast(&n, 1, MPI_INT, 0, MPI_COMM_WORLD);
-
-    int **a = new int *[size * 3];
-    a[0] = new int[size * n * 3];
-    for (int i = 1; i < size * 3; i++)
+    MPI_Datatype mt;
+    MPI_Datatype mt1;
+    MPI_Datatype mt2;
+    MPI_Type_contiguous(n, MPI_INT, &mt1);
+    MPI_Type_commit(&mt1);
+    MPI_Type_vector(n/2, 1, 2, mt1, &mt);
+    MPI_Type_commit(&mt);
+    MPI_Type_contiguous(2, mt, &mt1);
+    MPI_Type_commit(&mt1);
+    MPI_Type_vector(2, 1, 2, mt1, &mt2);
+    MPI_Type_commit(&mt2);
+    int **a = new int *[n];
+    a[0] = new int[n * n];
+    for (int i = 1; i < n; i++)
     {
         a[i] = a[i - 1] + n;
     }
     if (rank == 0)
     {
-        for (i = 0; i < size * 3; i++)
-        {
-            for (int j = 0; j < n; j++)
+        for (int i = 0; i < n; i++)
+        {   
+            for(int j =0;j<n;j++)
             {
                 a[i][j] = i;
             }
         }
+        MPI_Send(*a , 1, mt, 1, 777, MPI_COMM_WORLD);
     }
-    int **b = new int *[3];
-    b[0] = new int[3 * n];
-    for (int i = 1; i < 3; i++)
+    if (rank == 1)
     {
-        b[i] = b[i - 1] + n;
-    }
-
-    int *sc = new int[size];
-    int *ds = new int[size];
-
-    for (int i = 0; i < size; i++)
-    {
-        sc[i] = i + 1;
-        ds[i] = (i * (i + 1)) / 2;
-    }
-
-    MPI_Scatter(*a, 3 * n, MPI_INT, *b, 3 * n, MPI_INT, 0, MPI_COMM_WORLD);
-
-    Sleep(rank);
-
-    printf("rank= %d a: \n", rank);
-    for (i = 0; i < 3; i++)
-    {
-        for (int j = 0; j < n; j++)
-        {
-            printf(" %d ", b[i][j]);
+        MPI_Recv(*a, 1, mt, 0, 777, MPI_COMM_WORLD, &stat);
+        printf("rank= %d a: ", rank);
+        for (int i = 0; i < n; i++)
+        {   
+            for(int j =0;j<n;j++)
+            {
+                printf(" %d ", a[i][j]);
+            }
+            printf("\n ");
         }
-        printf("\n");
-
     }
-    printf("\n");
+
     MPI_Finalize();
-
-    delete[] b;
-    delete[] a;
-    delete[] sc;
-    delete[] ds;
-
     return 0;
 }
