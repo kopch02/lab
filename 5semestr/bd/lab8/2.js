@@ -88,6 +88,20 @@ db.articles.insertMany([
             text_comment: "text5.2",
             raiting: 10,
         }],
+    },
+
+    {
+        title: "Супер статья",
+        autor: "Тестировщик",
+        date_of_public: new Date("06.07.2022"),
+        text: "тестируем",
+        tags: ["тесты","мега тесты"],
+        comments: [{
+            name:"User222",
+            text_comment: "я тут единственный",
+            raiting: 10,
+        }
+        ],
     }
 ]
 )

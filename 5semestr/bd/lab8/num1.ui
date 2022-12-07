@@ -19,7 +19,7 @@
      <rect>
       <x>20</x>
       <y>20</y>
-      <width>401</width>
+      <width>321</width>
       <height>511</height>
      </rect>
     </property>
@@ -86,6 +86,70 @@
     </property>
     <property name="text">
      <string>Найти</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_about">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>60</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Подробнее</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_delete">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>100</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Удалить</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_insert">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>140</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Добавить</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_top">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>180</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Топ статей</string>
     </property>
    </widget>
   </widget>
