@@ -10,7 +10,10 @@
 
 *.doc
 *.docx
+*.pptx
+*.rar
 5semestr/parallel/*/include
+5semestr/parallel/semestr
 *.lib
 5semestr/parallel/*/*.exe
 
