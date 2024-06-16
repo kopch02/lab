@@ -1,0 +1,19 @@
+matr:
+0 7 9 0 0 14 
+7 0 10 15 0 0 
+9 10 0 11 0 2 
+0 15 11 0 6 0 
+0 0 0 6 0 9 
+14 0 2 0 9 0 
+
+The shortest distance to the vertices:
+Path out of 1 in 1 = 0
+Path out of 1 in 2 = 7
+Path out of 1 in 3 = 9
+Path out of 1 in 4 = 20
+Path out of 1 in 5 = 20
+Path out of 1 in 6 = 11
+
+
+shortest way
+1365

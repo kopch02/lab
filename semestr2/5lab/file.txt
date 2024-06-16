@@ -1,0 +1,3 @@
+30 1 red golden
+10 2 blue radeon
+20 3 green golden

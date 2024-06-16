@@ -1,0 +1,3 @@
+red rare 15 105.5
+green not_rare 5 20.1
+yellow very_rare 8 11.2
