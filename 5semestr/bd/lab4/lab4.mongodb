@@ -1,0 +1,231 @@
+use ("FirstDB");
+/*
+db.Workers.insertMany(
+[
+{
+_id: new ObjectId(),
+title: "Mike Vazovski",
+level: "Junior",
+age: 20,
+skills: ["Java", "Spring Boot"],
+salary: 3000,
+},
+{
+_id: new ObjectId(),
+title: "Lan Vansete",
+level: "Junior",
+age: 30,
+skills: ["Java", "Spring Boot", "Kotlin"],
+salary: 4000,
+},
+{
+_id: new ObjectId(),
+title: "Pon Diablo",
+level: "Middle",
+age: 35,
+skills: ["WinApi", "Android", "Kotlin"],
+salary: 6000,
+},
+{
+_id: new ObjectId(),
+title: "Aasd Dsasd",
+level: "Middle",
+age: 43,
+skills: ["Python", "Django"],
+salary: 7000,
+},
+{
+_id: new ObjectId(),
+title: "Mike Vazovski",
+level: "Senior",
+age: 50,
+skills: ["Python", "Pandas"],
+salary: 14000,
+},
+{
+_id: new ObjectId(),
+title: "Bill Smith",
+level: "Senior",
+age: 50,
+skills: ["Python", "C++", "Kotlin"],
+salary: 15000,
+}
+]
+);
+db.Workers.find()
+*/
+
+//num1
+db.Workers.aggregate([
+  {
+    $match:{level:"Middle"}
+  },
+  {
+    $group:{
+      _id:'age',
+      age:{
+        $avg:"$age"
+      }
+    }
+  }
+])
+
+
+//num2
+db.Workers.aggregate([
+  {
+    $group:{
+      _id:'salary',
+      max_salary:{$max:'$salary'},
+      min_salary:{$min:'$salary'}
+    }
+  }
+])
+
+
+//num3
+db.Workers.aggregate([
+  {
+    $group:{
+      _id:'$level',
+      avg_salary:{$avg:'$salary'}
+    }
+  },
+  {
+    $sort:{
+      avg_salary:1
+    }
+  }
+])
+
+
+//num4
+db.Workers.aggregate([
+  {
+    $match:{
+      salary:{$gt:7000}
+    }
+  },
+  {
+    $group:{
+        _id:'salary>7000',
+        count:{$count:{}}
+    }  
+  }
+])
+
+
+//num5
+db.Workers.aggregate([
+  {
+    $match:{
+      age:{$gte:20,$lte:30}
+    }
+  },
+  {
+    $unwind:"$skills"
+  },
+  {
+    $group: {
+      _id:'skills',
+      skills:{$addToSet:'$skills'}
+    }
+  }
+])
+
+
+//num6
+db.Workers.aggregate([
+
+  {
+    $unwind:"$skills"
+  },
+  {
+    $group: {
+      _id:'skills',
+      skills:{$addToSet:'$skills'}
+    }
+  },
+  {
+    $unwind:"$skills"
+  },
+  {
+    $group: {
+      _id:'count skills',
+      count:{$count:{}}
+    }
+  }
+])
+
+
+//num7
+db.Workers.aggregate([
+  {
+    $match:{
+      skills:{$in:['Python']}
+    }
+  },
+  {
+    $unwind:"$skills"
+  },
+  {
+    $match:{
+      skills:{$nin:['Python']}
+    }
+  },
+  {
+    $group: {
+      _id:'skills',
+      skills:{$addToSet:'$skills'}
+    }
+  }
+])
+
+
+//num8
+db.Workers.aggregate([
+  {
+    $unwind:"$skills"
+  },
+  {
+    $group: {
+      _id:'$skills',
+      workers:{$count:{}}
+    }
+  }
+])
+
+
+//num9
+db.Workers.aggregate([
+  {
+    $group: {
+      _id:'$level',
+      young:{$min:"$age"}
+    }
+  }
+])
+
+
+//num10
+db.Workers.aggregate([
+  {
+    $unwind:"$skills"
+  },
+  {
+    $group:{
+      _id:'$skills',
+      avg_salary:{$avg:'$salary'}
+    }
+  },
+  {
+    $sort:{
+      avg_salary:1
+    }
+  }
+])
+
+//db.Workers.find()
+
+
+

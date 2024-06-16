@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Добро пожаловать на марс</h1>
+<form action="" method="post" novalidate>
+    
+    <p>
+        <a class="btn btn-success" href="/login">Войти</a>
+    </p>
+    <p>
+        <a class="btn btn-primary " href="/register">Зарегистрироваться</a>
+    </p>
+    {{message}}
+    
+
+</form>
+{% endblock %}

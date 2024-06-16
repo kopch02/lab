@@ -1,0 +1,21 @@
+{
+    "name": "Пётр",
+    "lastname": "Петров",
+    "patronymic": "Петрович",
+    "year of birth": "2000",
+    "klass": "9",
+    "favorite subject": ["английский", "информатика", "фра"],
+    "duration of training": 9,
+    "registration": {
+        "country": "Россия",
+        "sity": "Кемерово",
+        "number house": 5,
+        "number apartament": 10
+    },
+    "place of residence": {
+        "country": "Россия",
+        "sity": "Кемерово",
+        "number house": 5,
+        "number apartament": 10
+    }
+}

@@ -1,0 +1,103 @@
+<mxfile host="app.diagrams.net" modified="2023-12-19T11:14:49.920Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="-BqIb6Kxuzem7fsg1fZb" version="22.1.11" type="device">
+  <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
+    <mxGraphModel dx="1636" dy="906" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="7v0lkXIynW3leKTd6SzO-1" value="Воспитатель&lt;br&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="320" y="310" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7v0lkXIynW3leKTd6SzO-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;strokeWidth=1;endSize=15;" edge="1" parent="1" source="7v0lkXIynW3leKTd6SzO-2" target="7v0lkXIynW3leKTd6SzO-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7v0lkXIynW3leKTd6SzO-2" value="Заведующий" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="125" y="270" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7v0lkXIynW3leKTd6SzO-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="1" source="7v0lkXIynW3leKTd6SzO-3" target="7v0lkXIynW3leKTd6SzO-11">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="140" y="445" />
+              <mxPoint x="140" y="490" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7v0lkXIynW3leKTd6SzO-3" value="Аналитик" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="190" y="415" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7v0lkXIynW3leKTd6SzO-5" value="Занесение диагностических данных&lt;span id=&quot;docs-internal-guid-be80db90-7fff-91f7-a101-12ac5c9e512a&quot;&gt;&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="190" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="7v0lkXIynW3leKTd6SzO-6" value="&lt;span id=&quot;docs-internal-guid-c7cb89db-7fff-e1ce-dc0b-c8b7a03903e0&quot;&gt;&lt;/span&gt;&lt;span id=&quot;docs-internal-guid-c7cb89db-7fff-e1ce-dc0b-c8b7a03903e0&quot;&gt;&lt;/span&gt;Просмотр рекомендаций по всем детям (общая тенденция) и по конкретному ребенку" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="390" width="180" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="7v0lkXIynW3leKTd6SzO-7" value="Просмотр статистических данных&lt;span id=&quot;docs-internal-guid-be80db90-7fff-91f7-a101-12ac5c9e512a&quot;&gt;&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="550" y="300" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="7v0lkXIynW3leKTd6SzO-8" value="создавать новых пользователей (воспитателей)&lt;span id=&quot;docs-internal-guid-be80db90-7fff-91f7-a101-12ac5c9e512a&quot;&gt;&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="50" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="7v0lkXIynW3leKTd6SzO-9" value="привязывать воспитателя к группе, создавать/редактировать группы, добавлять/редактировать данные о детях&lt;span id=&quot;docs-internal-guid-be80db90-7fff-91f7-a101-12ac5c9e512a&quot;&gt;&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="30" width="230" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="7v0lkXIynW3leKTd6SzO-10" value="создавать категории с подкатегориями для внесения данных по диагностике способностей ребенка.&lt;span id=&quot;docs-internal-guid-be80db90-7fff-91f7-a101-12ac5c9e512a&quot;&gt;&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-210" y="180" width="230" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="7v0lkXIynW3leKTd6SzO-11" value="Просматривать данные по садику/садикам (видеть у кого все хорошо и у кого все плохо) (просто проектируем, но не реализуем)" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-120" y="430" width="220" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="7v0lkXIynW3leKTd6SzO-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;entryX=0.45;entryY=1.075;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="7v0lkXIynW3leKTd6SzO-1" target="7v0lkXIynW3leKTd6SzO-5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="390" y="530" as="sourcePoint" />
+            <mxPoint x="535" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7v0lkXIynW3leKTd6SzO-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;entryX=-0.017;entryY=0.425;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="7v0lkXIynW3leKTd6SzO-1" target="7v0lkXIynW3leKTd6SzO-7">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="350" as="sourcePoint" />
+            <mxPoint x="444" y="286" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="450" y="350" />
+              <mxPoint x="450" y="334" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7v0lkXIynW3leKTd6SzO-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;entryX=0.014;entryY=0.447;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="7v0lkXIynW3leKTd6SzO-1" target="7v0lkXIynW3leKTd6SzO-6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="370" y="360" as="sourcePoint" />
+            <mxPoint x="454" y="296" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="410" y="360" />
+              <mxPoint x="410" y="438" />
+              <mxPoint x="463" y="438" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7v0lkXIynW3leKTd6SzO-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;entryX=0;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="7v0lkXIynW3leKTd6SzO-2" target="7v0lkXIynW3leKTd6SzO-9">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="230" y="414" as="sourcePoint" />
+            <mxPoint x="314" y="350" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="254" y="270" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7v0lkXIynW3leKTd6SzO-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;entryX=0.658;entryY=1.038;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="7v0lkXIynW3leKTd6SzO-2" target="7v0lkXIynW3leKTd6SzO-8">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="20" y="280" as="sourcePoint" />
+            <mxPoint x="119" y="142" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="119" y="280" />
+              <mxPoint x="119" y="133" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7v0lkXIynW3leKTd6SzO-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;entryX=0.991;entryY=0.618;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="7v0lkXIynW3leKTd6SzO-2" target="7v0lkXIynW3leKTd6SzO-10">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="98.1" y="407" as="sourcePoint" />
+            <mxPoint x="40.030000000000065" y="265.01" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

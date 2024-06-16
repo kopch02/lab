@@ -1,0 +1,147 @@
+.collection_table {
+  &_row {
+    width: 100%;
+    transition: 0.5s;
+    border-bottom: 1.69px solid #ebe9e9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:hover {
+      background-color: #c5c5c5;
+    }
+  }
+
+  & tr {
+    text-align: center;
+    height: 110px;
+  }
+
+  & td {
+    margin-top: 41px;
+  }
+
+  & td:first-child {
+    margin-top: 0;
+  }
+}
+
+.collection_logo {
+  display: flex;
+  flex-direction: row;
+  gap: 23px;
+  width: 417px;
+  height: 151px;
+
+  &_img {
+    border: 3.5px solid #fff;
+    border-radius: 1751px;
+    width: 84px;
+    height: 84px;
+    background: #fff;
+    margin: auto 0;
+  }
+}
+
+.collection_item_name {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: auto 0;
+  text-align: left;
+}
+
+.collection_name_span1 {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 140%;
+  color: #141416;
+}
+
+.collection_name_span2 {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 150%;
+  color: #64748b;
+}
+
+.collection_efirium_logo {
+  width: 32px;
+  height: 33px;
+
+  &_span {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 140%;
+    color: #141416;
+  }
+}
+
+.collection_item_list_item_procent {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 130%;
+  letter-spacing: 0.01em;
+}
+
+.collection_item_list_item {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 23px;
+  line-height: 130%;
+  letter-spacing: 0.01em;
+  color: #010101;
+}
+
+@media (max-width: 768px) {
+  .collection_table {
+    &_row {
+      width: 100%;
+
+      & td:nth-last-child(-n + 4) {
+        display: none;
+      }
+
+      & td:nth-child(2) {
+        width: 90px;
+        height: 71px;
+      }
+    }
+  }
+
+  .collection_logo {
+    width: 130px;
+    height: 71px;
+
+    &_img {
+      border: 1.93px solid #fff;
+      border-radius: 963px;
+      width: 46px;
+      height: 46px;
+    }
+  }
+
+  .collection_item_name {
+    width: 63px;
+    height: 48px;
+  }
+  .collection_name_span1 {
+    font-size: 15px;
+  }
+
+  .collection_name_span2 {
+    font-size: 12px;
+  }
+
+  .collection_efirium_logo {
+    width: 19px;
+    height: 18px;
+    &_span {
+      font-size: 15px;
+    }
+  }
+}

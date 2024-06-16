@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="654.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <children>
+      <TableView fx:id="deptTable" layoutX="214.0" prefHeight="516.0" prefWidth="438.0">
+        <columns>
+          <TableColumn fx:id="deptIdCol" prefWidth="121.0" text="ID" />
+          <TableColumn fx:id="deptNameCol" minWidth="0.0" prefWidth="313.0" text="NAME" />
+        </columns>
+      </TableView>
+      <Button fx:id="filter" layoutX="54.0" layoutY="258.0" mnemonicParsing="false" onAction="#filterDepartments" prefHeight="36.0" prefWidth="109.0" text="filter" />
+      <TextField fx:id="filterData" layoutX="15.0" layoutY="224.0" prefHeight="25.0" prefWidth="188.0" />
+   </children>
+</AnchorPane>

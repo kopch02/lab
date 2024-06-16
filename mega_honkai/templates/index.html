@@ -1,0 +1,33 @@
+{% extends "base.html" %} 
+
+{% block side_content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css')}}" type="text/css"/>
+<h1>Счётчик прыжков</h1>
+<div class="table">
+    {%for table in tables%}
+    <div class="banner">
+        <div class="info-banner">
+            <h2>{{table.name}}</h2>
+            <table >
+                <tr>
+                    <td>Всего прыжков:</td>
+                    <td>{{table.count}}</td>
+                </tr>
+                <tr>
+                    <td>Гарант 5*:</td>
+                    <td>{{table.garant_5}}</td>
+                </tr><tr>
+                    <td>Гарант 4*:</td>
+                    <td>{{table.garant_4}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="all_5">
+            <h2>Все 5*:</h2>
+            {%for item in table.all_5%}
+                <p class="item_5_starts">{{item.item_time}} {{item.item.name}} {{item.garant}}</p>
+            {%endfor%}
+        </div>
+    </div>
+    {%endfor%}
+{% endblock %}

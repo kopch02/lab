@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="402.0" prefWidth="265.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.num1.HelloController">
+   <children>
+      <Button fx:id="button1" layoutX="23.0" layoutY="295.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" text="1" />
+      <Button fx:id="button2" layoutX="83.0" layoutY="295.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" text="2" />
+      <Button fx:id="button3" layoutX="141.0" layoutY="295.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" text="3" />
+      <Button fx:id="button4" layoutX="23.0" layoutY="241.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" text="4" />
+      <Button fx:id="button5" layoutX="83.0" layoutY="241.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" text="5" />
+      <Button fx:id="button6" layoutX="141.0" layoutY="241.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" text="6" />
+      <Button fx:id="button7" layoutX="23.0" layoutY="188.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" text="7" />
+      <Button fx:id="button8" layoutX="83.0" layoutY="188.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" text="8" />
+      <Button fx:id="button9" layoutX="141.0" layoutY="188.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" text="9" />
+      <Button fx:id="button_final" layoutX="141.0" layoutY="348.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" text="=" />
+      <Button fx:id="button_plus" layoutX="199.0" layoutY="295.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" text="+" />
+      <Button fx:id="button_minus" layoutX="199.0" layoutY="241.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" text="-" />
+      <Button fx:id="button_mult" layoutX="199.0" layoutY="188.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" text="*" />
+      <Button fx:id="button_devision" layoutX="199.0" layoutY="348.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" text="/" />
+      <Button fx:id="button0" layoutX="83.0" layoutY="348.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" text="0" />
+      <Button fx:id="button_sbros" layoutX="23.0" layoutY="348.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" text="C" />
+      <TextField fx:id="displayTextField" layoutX="22.0" layoutY="25.0" prefHeight="114.0" prefWidth="222.0" />
+   </children>
+</Pane>

@@ -1,0 +1,16 @@
+drop table S_CUSTOMER cascade constraints;
+drop table S_DEPT cascade constraints;
+drop table S_EMP cascade constraints;
+drop table S_ITEM cascade constraints;
+drop table S_ORD cascade constraints;
+drop table S_PRODUCT cascade constraints;
+drop table S_REGION cascade constraints;
+drop table S_INVENTORY cascade constraints;
+drop table S_IMAGE cascade constraints;
+drop table S_TITLE cascade constraints;
+drop table S_SALGRADE cascade constraints;
+drop table EMPLOYEE cascade constraints;
+drop table DEPARTMENT cascade constraints;
+drop table LECTURER cascade constraints;
+drop table CHAIR cascade constraints;
+select table_name from user_tables;

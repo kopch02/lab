@@ -1,0 +1,62 @@
+[
+{
+    "first_name":"segey",
+    "last_name":"sergeev",
+    "photo":"user1.jpeg",
+    "specialties":["english","work"]
+},
+{
+    "first_name":"petr",
+    "last_name":"sergeev",
+    "photo":"user2.jpeg",
+    "specialties":["english","work"]
+},
+{
+    "first_name":"georgiy",
+    "last_name":"sergeev",
+    "photo":"user3.jpeg",
+    "specialties":["english","work"]
+},
+{
+    "first_name":"konstantin",
+    "last_name":"sergeev",
+    "photo":"user4.jpeg",
+    "specialties":["english","work"]
+},
+{
+    "first_name":"anton",
+    "last_name":"sergeev",
+    "photo":"user5.jpeg",
+    "specialties":["english","work"]
+},
+{
+    "first_name":"evgeniy",
+    "last_name":"sergeev",
+    "photo":"user6.jpeg",
+    "specialties":["english","work"]
+},
+{
+    "first_name":"andrey",
+    "last_name":"sergeev",
+    "photo":"user7.jpeg",
+    "specialties":["english","work"]
+},
+{
+    "first_name":"viktor",
+    "last_name":"sergeev",
+    "photo":"user8.jpeg",
+    "specialties":["english","work"]
+},
+{
+    "first_name":"dmitriy",
+    "last_name":"sergeev",
+    "photo":"user9.jpeg",
+    "specialties":["english","work"]
+},
+{
+    "first_name":"gleb",
+    "last_name":"sergeev",
+    "photo":"user10.jpeg",
+    "specialties":["english","work"]
+}
+]

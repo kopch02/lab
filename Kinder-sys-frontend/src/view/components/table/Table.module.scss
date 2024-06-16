@@ -1,0 +1,16 @@
+.table {
+    width: 900px;
+    margin: 0 auto;
+    max-height: 600px;
+    margin-top: 10px;
+
+    & caption {
+        position: sticky;
+        top: 0;
+    }
+
+    & thead {
+        position: sticky;
+        top: 49px;
+    }
+}

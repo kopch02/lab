@@ -1,0 +1,24 @@
+{% extends "base.html" %} 
+
+{% block side_content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/table.css')}}" type="text/css"/>
+
+    <h1>истории прыжков</h1><br>
+    <a class="btn btn-success" href="/">Главная</a>
+    <table  border="3"  >
+        <tr>
+          <td>тип</td>
+          <td>Название</td>
+          <td>редкость</td>
+          <td>время</td>
+        </tr>
+        {% for item in users%}
+        <tr>
+          <td>{{item.type_loot}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.rank}}*</td>
+          <td>{{item.time}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+{% endblock %}

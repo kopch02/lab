@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if number != None %}
+            {% set member = members[number] %}
+        {% elif number == None %}
+            {% set member = members|random %}
+    {% endif %}
+    <h2>{{member["first_name"]}}  {{member["last_name"]}}</h2>
+    <img src={{url_for('photo',name=member.photo)}}>
+    <div>{{member["specialties"]}}</div>>
+    
+{% endblock %}

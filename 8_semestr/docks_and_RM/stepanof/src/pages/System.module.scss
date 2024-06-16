@@ -1,0 +1,43 @@
+.book {
+  &_list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    width: 600px;
+    margin: 20px auto;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 67%;
+    color: #141416;
+    text-align: center;
+  }
+
+  &_item {
+    padding: 5px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &_item:nth-child(1) {
+    background-color: azure;
+  }
+
+  &_item:nth-child(2) {
+    background-color:grey;
+  }
+
+  &_author {
+    font-size: 17px;
+  }
+
+  &_btn {
+    font-family: var(--font-family);
+    font-weight: 600;
+    border-radius: 5px;
+  }
+}

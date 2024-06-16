@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if list == "ul" %}
+    <ul>
+        {% for prof in list_prof %}
+        <div>
+            <li>{{prof}}</li>
+        </div>
+        {% endfor %}
+    </ul>
+        {% elif list == "ol" %}
+            {% for prof in list_prof %}
+            <div>
+                {{loop.index}} {{prof}}
+            </div>
+            {% endfor %}
+    {% else %}
+    <div>НЕ ВЕРНЫЙ ПАРАМЕТР!!!</div>
+    {% endif %}
+{% endblock %}

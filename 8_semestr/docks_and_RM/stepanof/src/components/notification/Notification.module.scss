@@ -1,0 +1,142 @@
+.unleash_notification {
+  position: absolute;
+  left: 400px;
+  border-radius: 13px;
+  padding: 11px;
+  width: 325px;
+  height: 83px;
+  backdrop-filter: blur(30.380367279052734px);
+  box-shadow: 0 19px 28px 0 rgba(70, 70, 70, 0.1);
+  background: linear-gradient(226deg, #fcfcfd 0%, #fcfcfd 100%);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+
+  &__info {
+    width: 227px;
+    height: 61px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: auto 0;
+
+    &_logo {
+      width: 64px;
+      height: 45px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    &_name {
+      font-family: var(--font-family);
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 171%;
+    }
+
+    &_text {
+      width: 151px;
+      height: 61px;
+      display: flex;
+      flex-direction: column;
+      margin-left: 12px;
+    }
+
+    &_text span {
+      font-family: var(--font-family);
+      font-weight: 600;
+      font-size: 11px;
+      line-height: 167%;
+    }
+  }
+
+  &__avatar {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    margin-left: 15px;
+
+    &_img {
+      border-radius: 34px;
+      width: 39px;
+      height: 39px;
+      margin-top: 3px;
+    }
+
+    &_verified {
+      position: absolute;
+      left: 25px;
+    }
+  }
+
+  &__logo {
+    border-radius: 10px;
+    width: 60px;
+    height: 60px;
+    margin: auto 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .unleash_notification {
+    border-radius: 6px;
+    padding: 5px;
+    width: 155px;
+    height: 40px;
+    left: 170px;
+    top: 35px;
+
+    &__info {
+      width: 108px;
+      height: 30px;
+
+      &_logo {
+        width: 30px;
+        height: 21px;
+
+        &_img {
+          width: 5px;
+          height: 5px;
+        }
+      }
+
+      &_name {
+        font-size: 6px;
+      }
+
+      &_text {
+        height: auto;
+      }
+
+      &_text span {
+        font-size: 5px;
+      }
+    }
+
+    &__avatar {
+      width: 21px;
+      height: 21px;
+      margin-left: 3px;
+
+      &_img {
+        border-radius: 16px;
+        width: 19px;
+        height: 19px;
+      }
+
+      &_verified {
+        width: 8px;
+        height: 8px;
+        left: 13px;
+      }
+    }
+
+    &__logo {
+      border-radius: 5px;
+      width: 29px;
+      height: 29px;
+    }
+  }
+}

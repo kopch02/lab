@@ -1,0 +1,76 @@
+.table1 tr,
+.table1 td {
+  border: 1px solid #000;
+}
+
+.table1 {
+  width: 600px;
+}
+
+.table1 td {
+  height: 10px;
+}
+
+.table2 tr,
+.table2 td {
+  border: 1px solid #000;
+}
+
+.table2 {
+  width: 600px;
+}
+
+.table2 td {
+  height: 10px;
+}
+
+.table3 tr,
+.table3 td {
+  border: 1px solid #000;
+}
+
+.table3 {
+  width: 150px;
+}
+
+.table3 td {
+  height: 10px;
+}
+
+.table4 tr,
+.table4 td {
+  border: 1px solid #000;
+}
+
+.table4 {
+  width: 150px;
+}
+
+.table4 td {
+  height: 10px;
+}
+
+.tc {
+  background-color: #40E0D0;
+}
+
+.tr {
+  background-color: #F0E68C;
+}
+
+.table5 {
+  background-color: #000;
+}
+
+.table5-v {
+  border-collapse:unset;
+  width: 150px;
+
+}
+
+.table5-v td {
+  height: 10px;
+  background-color: white;
+}
+
+

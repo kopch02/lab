@@ -1,0 +1,63 @@
+.weekly {
+  width: 100%;
+  height: 873px;
+  background: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  & h2 {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 45px;
+    line-height: 60%;
+    color: #c5c5c5;
+    margin: 100px auto;
+  }
+
+  &_container {
+    position: relative;
+    display: flex;
+  }
+}
+
+.trending {
+  position: relative;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  margin: 0 auto;
+  height: 482px;
+  width: 1247px;
+  /* overflow: hidden; */
+  white-space: nowrap;
+  justify-content: center;
+}
+
+.recently {
+  position: absolute;
+  top: 140px;
+  left: 50%;
+}
+
+@media (max-width: 768px) {
+  .weekly {
+    height: 589px;
+    & h2 {
+      margin: 50px auto;
+      font-size: 30px;
+      line-height: 90%;
+    }
+  }
+
+  .recently {
+    display: none;
+  }
+
+  .trending {
+    padding-top: 30px;
+    height: 340px;
+    width: 100%;
+    overflow-x: auto;
+  }
+}

@@ -1,0 +1,66 @@
+/* CSS для таблиц */
+.table {
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+}
+
+/* CSS для заголовков таблиц */
+h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+h2 {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+
+.parent-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+}
+
+/*.banner{
+    
+  }*/
+
+.info-banner {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #505050;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    /* устанавливаем направление по вертикали */
+}
+
+.all_5 {
+    text-align: center;
+    border: 2px solid #505050;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tbody {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.table {
+    margin: auto;
+    margin-top: 10px;
+}
+
+.item_5_starts {
+    margin-left: 10px;
+    margin-right: 10px;
+}

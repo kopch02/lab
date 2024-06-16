@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Список работ в категории: {{categori_title}}</h1>
+{% if  jobs%}
+    {% for item in jobs%}
+
+            <h2>{{loop.index}}</h2>
+            <table bgcolor="#ffcc00" border="3" bordercolor="red" cellpadding="10">
+                <tr>
+                    <td>Название работы </td>
+                    <td>ФИО ответсвенного</td>
+                    <td>Продолжительность в часах</td>
+                    <td>id команды</td>
+                    <td>Статус</td>
+                  </tr>
+                  <tr>
+                    <td>{{item.job}}</td>
+                    <td>{{item.user.surname}} {{item.user.name}}</td>
+                    <td>{{item.work_size}}</td>
+                    <td>{{item.collaborators}}</td>
+                    <td>{{item.is_finished}}</td>
+                  </tr>
+
+            </table>
+            {% if current_user.is_authenticated %}
+                {% if current_user.id == 1 or current_user.id == item.user.id%}
+                    <p>
+                        <a class="btn btn-success" href="/job/{{item.id}}">Редактировать</a>
+                        <a class="btn btn-danger" href="/delete_job/{{ item.id }}">Удалить</a>
+                    </p>
+                {% endif %}
+            {% endif %}
+            {% endfor %}
+            {% if current_user.is_authenticated %}
+            <p>
+                <a class="btn btn-success" href="/add_job">Добавить</a>
+            </p>
+            {% endif %}
+{% else %}
+    <h2>Здесь нет работ</h2>     
+{% endif %}
+
+{% endblock %}

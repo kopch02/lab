@@ -1,0 +1,11 @@
+{
+    "java.project.sourcePaths": ["src"],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "libs/java-client-9.0.0.jar",
+        "libs/junit-4.13.2.jar",
+        "libs/selenium-java-4.15.0.jar",
+        "libs/selenium-server-4.16.0.jar"
+    ]
+}

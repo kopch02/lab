@@ -1,0 +1,166 @@
+{
+  "cards": [
+    {
+      "id": 1,
+      "image": "img/trending1.jpg",
+      "name": "Sun-Glass",
+      "bid": "1.75",
+      "time": "07h 09m 12s"
+    },
+    {
+      "id": 2,
+      "image": "img/trending2.jpg",
+      "name": "Sun-Glass",
+      "bid": "1.75",
+      "time": "07h 09m 12s"
+    },
+    {
+      "id": 3,
+      "image": "img/trending3.jpg",
+      "name": "Sun-Glass",
+      "bid": "1.75",
+      "time": "07h 09m 12s"
+    },
+    {
+      "id": 4,
+      "image": "img/trending4.jpg",
+      "name": "NuEvey",
+      "bid": "1.25",
+      "time": "07h 09m 12s"
+    },
+    {
+      "id": 5,
+      "image": "img/trending1.jpg",
+      "name": "Sun-Glass",
+      "bid": "1.75",
+      "time": "07h 09m 12s"
+    },
+    {
+      "id": 6,
+      "image": "img/trending2.jpg",
+      "name": "Sun-Glass",
+      "bid": "1.75",
+      "time": "07h 09m 12s"
+    },
+    {
+      "id": 7,
+      "image": "img/trending3.jpg",
+      "name": "Sun-Glass",
+      "bid": "1.75",
+      "time": "07h 09m 12s"
+    },
+    {
+      "id": 8,
+      "image": "img/trending4.jpg",
+      "name": "NuEvey",
+      "bid": "1.25",
+      "time": "07h 09m 12s"
+    }
+  ],
+
+  "sellers": [
+    {
+      "id": 1,
+      "image": "img/recently1.jpg",
+      "name": "Alex Ca.",
+      "username": "@Alexy"
+    },
+    {
+      "id": 2,
+      "image": "img/sellers2.jpg",
+      "name": "Jailyn Sa.",
+      "username": "@JuliyaS"
+    },
+    {
+      "id": 3,
+      "image": "img/sellers3.jpg",
+      "name": "Jailyn Sa.",
+      "username": "@JuliyaS"
+    },
+    {
+      "id": 4,
+      "image": "img/sellers4.jpg",
+      "name": "Trevor Pu.",
+      "username": "@TrevorP"
+    },
+    {
+      "id": 5,
+      "image": "img/sellers5.jpg",
+      "name": "Trevor Pu.",
+      "username": "@TrevorP"
+    },
+    {
+      "id": 6,
+      "image": "img/sellers6.jpg",
+      "name": "Trevor Pu.",
+      "username": "@TrevorP"
+    }
+  ],
+
+  "recently": [
+    {
+      "id": 1,
+      "image": "img/recently1.jpg",
+      "name": "Alex Ca.",
+      "username": "Alexy",
+      "price": "8,456",
+      "procent": 23.0
+    },
+    {
+      "id": 2,
+      "image": "img/recently2.jpg",
+      "name": "Juliya S.",
+      "username": "JuliyaS",
+      "price": "5,327",
+      "procent": -32.0
+    }
+  ],
+
+  "collections": [
+    {
+      "id": 1,
+      "image": "img/recently1.jpg",
+      "name": "Alex Ca.",
+      "username": "By Alexy",
+      "volume": "8,456",
+      "procent": 27.78,
+      "price": "3,5",
+      "owners": "2.2K",
+      "items": "500"
+    },
+    {
+      "id": 2,
+      "image": "img/recently2.jpg",
+      "name": "Alex Ca.",
+      "username": "By Alexy",
+      "volume": "4,780",
+      "procent": 27.78,
+      "price": "7,9",
+      "owners": "3.4K",
+      "items": "900"
+    },
+    {
+      "id": 3,
+      "image": "img/recently1.jpg",
+      "name": "Alex Ca.",
+      "username": "By Alexy",
+      "volume": "8,456",
+      "procent": 27.78,
+      "price": "3,5",
+      "owners": "2.2K",
+      "items": "500"
+    },
+    {
+      "id": 4,
+      "image": "img/recently2.jpg",
+      "name": "Alex Ca.",
+      "username": "By Alexy",
+      "volume": "4,780",
+      "procent": 27.78,
+      "price": "7,9",
+      "owners": "3.4K",
+      "items": "900"
+    }
+  ],
+  "password":"111"
+}

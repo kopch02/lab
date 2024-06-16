@@ -1,0 +1,75 @@
+INSERT INTO s_customer
+(ID,NAME,PHONE,ADDRESS,CITY,STATE,COUNTRY,ZIP_CODE,CREDIT_RATING,SALES_REP_ID,REGION_ID,COMMENTS)
+VALUES
+(201,'Unisports','55-2066101','72 Via Bahia','Sao Paolo',NULL,'Brazil',NULL,'EXCELLENT',11,2,'Customer usually orders large amounts and has a high order total. This is okay as long')
+/
+INSERT INTO s_customer
+(ID,NAME,PHONE,ADDRESS,CITY,STATE,COUNTRY,ZIP_CODE,CREDIT_RATING,SALES_REP_ID,REGION_ID,COMMENTS)
+VALUES
+(202,'Simms Atheletics','8 1-20101','6741 Takashi Blvd.','Osaka',NULL,'Japan',NULL,'POOR',14,4,'Customer should always pay by cash until his credit rating improves.')
+/
+INSERT INTO s_customer
+(ID,NAME,PHONE,ADDRESS,CITY,STATE,COUNTRY,ZIP_CODE,CREDIT_RATING,SALES_REP_ID,REGION_ID,COMMENTS)
+VALUES
+(203,'Delhi Sports','91-10351','11368 Chanakya','New Delhi',NULL,'India',NULL,'GOOD',14,4,'Customer specializes in baseball equipment and is the largest retailer in India.')
+/
+INSERT INTO s_customer
+(ID,NAME,PHONE,ADDRESS,CITY,STATE,COUNTRY,ZIP_CODE,CREDIT_RATING,SALES_REP_ID,REGION_ID,COMMENTS)
+VALUES
+(204,'Womansport','1-206-104-0103','281 King Street','Seattle',NULL,'USA','98 101','EXCELLENT',11,1,NULL)
+/
+INSERT INTO s_customer
+(ID,NAME,PHONE,ADDRESS,CITY,STATE,COUNTRY,ZIP_CODE,CREDIT_RATING,SALES_REP_ID,REGION_ID,COMMENTS)
+VALUES
+(205,'Kams Sporting Goods','852-3692888','15 Henessey Road','Hong Kong',NULL,NULL,NULL,'EXCELLENT',21,4,NULL)
+/
+INSERT INTO s_customer
+(ID,NAME,PHONE,ADDRESS,CITY,STATE,COUNTRY,ZIP_CODE,CREDIT_RATING,SALES_REP_ID,REGION_ID,COMMENTS)
+VALUES
+(206,'Sportique','33-2257201','172 Rue de Rivoli','Cannes',NULL,'France',NULL,'EXCELLENT',11,5,'Customer specializes in Soccer. Likes to order accessories in bright colors.')
+/
+INSERT INTO s_customer
+(ID,NAME,PHONE,ADDRESS,CITY,STATE,COUNTRY,ZIP_CODE,CREDIT_RATING,SALES_REP_ID,REGION_ID,COMMENTS)
+VALUES
+(207,'Sweet Rock Sports','234-6036201','6 Saint Antoine','Lagos',NULL,'Nigeria',NULL,'GOOD',NULL,3,NULL)
+/
+INSERT INTO s_customer
+(ID,NAME,PHONE,ADDRESS,CITY,STATE,COUNTRY,ZIP_CODE,CREDIT_RATING,SALES_REP_ID,REGION_ID,COMMENTS)
+VALUES
+(208,'Muench Sports','49-527454','435 Gruenestrasse','Stuttgart',NULL,'Germany',NULL,'GOOD',17,5,'Customer usually pays small orders by cash and large orders on credit.')
+/
+INSERT INTO s_customer
+(ID,NAME,PHONE,ADDRESS,CITY,STATE,COUNTRY,ZIP_CODE,CREDIT_RATING,SALES_REP_ID,REGION_ID,COMMENTS)
+VALUES
+(209,'Beisbol Si!','809-352689','792 Playa Del Mar','Sen Pedro de Macons',NULL,'Dominican Republic',NULL,'EXCELLENT',11,1,NULL)
+/
+INSERT INTO s_customer
+(ID,NAME,PHONE,ADDRESS,CITY,STATE,COUNTRY,ZIP_CODE,CREDIT_RATING,SALES_REP_ID,REGION_ID,COMMENTS)
+VALUES
+(210,'Futbol Sonora','52-404562','3 Via Saguaro','Nogales',NULL,'Mexico',NULL,'EXCELLENT',21,2,'Customer is difficult to reach by phone. Try mail.')
+/
+INSERT INTO s_customer
+(ID,NAME,PHONE,ADDRESS,CITY,STATE,COUNTRY,ZIP_CODE,CREDIT_RATING,SALES_REP_ID,REGION_ID,COMMENTS)
+VALUES
+(211,'Kuhns Sports','42-111292','7 Modrany','Prague',NULL,'Czechoslovakia',NULL,'EXCELLENT',NULL,5,NULL)
+/
+INSERT INTO s_customer
+(ID,NAME,PHONE,ADDRESS,CITY,STATE,COUNTRY,ZIP_CODE,CREDIT_RATING,SALES_REP_ID,REGION_ID,COMMENTS)
+VALUES
+(212,'Hamada Sport','20-1209211','57A Corniche','Alexandria',NULL,'Egypt',NULL,'EXCELLENT',13,3,'Customer orders sea and water equipment.')
+/
+INSERT INTO s_customer
+(ID,NAME,PHONE,ADDRESS,CITY,STATE,COUNTRY,ZIP_CODE,CREDIT_RATING,SALES_REP_ID,REGION_ID,COMMENTS)
+VALUES
+(213,'Big Johns Sports Emporium','1-415-555-6281','4783 18th Street','San Fracisco',NULL,'USA','94117','EXCELLENT',11,1,'Customer has a dependable credit record.')
+/
+INSERT INTO s_customer
+(ID,NAME,PHONE,ADDRESS,CITY,STATE,COUNTRY,ZIP_CODE,CREDIT_RATING,SALES_REP_ID,REGION_ID,COMMENTS)
+VALUES
+(214,'Ojibvay Retail','1-716-555-7171','415 Main Street','Buffalo',NULL,'USA','14202','POOR',11,1,NULL)
+/
+INSERT INTO s_customer
+(ID,NAME,PHONE,ADDRESS,CITY,STATE,COUNTRY,ZIP_CODE,CREDIT_RATING,SALES_REP_ID,REGION_ID,COMMENTS)
+VALUES
+(215,'Sporta Russia','7-3892456','6000 Yekatamina','Saint Petersburg',NULL,'Russia',NULL,'POOR',NULL,5,'This customer is very friendly, but has difficulty paying bills. Insist upon cash.')
+/

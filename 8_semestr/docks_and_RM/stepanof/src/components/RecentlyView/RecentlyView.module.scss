@@ -1,0 +1,195 @@
+.recently__view {
+  position: absolute;
+  top: 370px;
+  border: 1px solid #edf2f7;
+  border-radius: 16px;
+  width: 365px;
+  height: 246px;
+  box-shadow: 10px 10px 50px 0 rgba(20, 20, 22, 0.1);
+  background: #fff;
+}
+
+.recently__top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 100px;
+
+  & h3 {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 21px;
+    line-height: 135%;
+    letter-spacing: 0.01em;
+    color: #1a202c;
+  }
+}
+
+.recently__list {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &_item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 90px;
+    transition: 0.3s;
+
+    &:hover {
+      background: #f1f1f1;
+    }
+  }
+}
+
+.recently__icon {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  position: relative;
+}
+
+.recently__item_img {
+  border: 1.92px solid #fff;
+  border-radius: 960px;
+  width: 46px;
+  height: 46px;
+  display: block;
+}
+
+.recently__item_number {
+  position: absolute;
+  z-index: 1;
+  left: 31px;
+  top: 27px;
+  border-radius: 100%;
+  background-color: #fff;
+  width: 22px;
+  height: 22px;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 150%;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: #141416;
+}
+
+.recently__item_name {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.recently__name_span1 {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 140%;
+  color: #141416;
+}
+
+.recently__name_span2 {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: #64748b;
+}
+
+.recently__item_price_container {
+  width: 65px;
+  height: 49px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.recently__item_price {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 140%;
+  color: #141416;
+  text-align: right;
+}
+
+.recently__item_procent {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 150%;
+  margin-left: auto;
+}
+
+.efirium_logo {
+  width: 19px;
+  height: 18px;
+}
+
+@media (max-width: 768px) {
+  .recently__view {
+    width: 153px;
+    height: 103px;
+    top: 250px;
+    left: 30px;
+  }
+
+  .recently__top {
+    gap: 10px;
+
+    & h3 {
+      font-size: 8px;
+    }
+  }
+
+  .recently__list {
+    gap: 7px;
+    &_item {
+      gap: 0;
+    }
+  }
+
+  .recently__item_img {
+    border: 0.81px solid #fff;
+    border-radius: 405px;
+    width: 19px;
+    height: 19px;
+  }
+
+  .recently__item_number {
+    width: 8px;
+    height: 8px;
+    font-size: 4px;
+    left: 12px;
+    top: 12px;
+  }
+
+  .recently__name_span1 {
+    font-size: 6px;
+  }
+
+  .recently__name_span2 {
+    font-size: 5px;
+  }
+
+  .recently__item_price_container {
+    height: 21px;
+  }
+
+  .recently__item_price {
+    font-size: 6px;
+  }
+
+  .efirium_logo {
+    width: 9px;
+    height: 8px;
+  }
+
+  .recently__item_procent {
+    font-size: 5px;
+  }
+}

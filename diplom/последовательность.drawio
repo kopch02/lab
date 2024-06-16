@@ -1,0 +1,50 @@
+<mxfile host="app.diagrams.net" modified="2024-01-08T13:28:08.033Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="Y2UT19MiWzy8BsvG5211" version="22.1.17" type="device">
+  <diagram name="Страница — 1" id="w-Hs6Sr6aaXbmAnwRoqn">
+    <mxGraphModel dx="491" dy="531" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="oHVkFjz3ECCGFoP-RqGt-2" value="Внешний сервис" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="230" y="200" width="100" height="430" as="geometry" />
+        </mxCell>
+        <mxCell id="oHVkFjz3ECCGFoP-RqGt-17" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="oHVkFjz3ECCGFoP-RqGt-2">
+          <mxGeometry x="45" y="50" width="10" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="oHVkFjz3ECCGFoP-RqGt-4" value="GET, POST, PUT, DELETE&lt;br&gt;запрос к ресурсу" style="html=1;verticalAlign=bottom;startArrow=oval;startFill=1;endArrow=block;startSize=8;curved=0;rounded=0;" edge="1" parent="1" source="oHVkFjz3ECCGFoP-RqGt-2">
+          <mxGeometry width="60" relative="1" as="geometry">
+            <mxPoint x="310" y="290" as="sourcePoint" />
+            <mxPoint x="499.5" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oHVkFjz3ECCGFoP-RqGt-5" value="Контроллеры" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="450" y="200" width="100" height="430" as="geometry" />
+        </mxCell>
+        <mxCell id="oHVkFjz3ECCGFoP-RqGt-15" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="oHVkFjz3ECCGFoP-RqGt-5">
+          <mxGeometry x="55" y="119.97" width="10" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="oHVkFjz3ECCGFoP-RqGt-16" value="Валидация&lt;br&gt;&amp;nbsp;полученных данных" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" edge="1" target="oHVkFjz3ECCGFoP-RqGt-15" parent="oHVkFjz3ECCGFoP-RqGt-5">
+          <mxGeometry x="-1" y="20" relative="1" as="geometry">
+            <mxPoint x="55.000000000000114" y="110.0044827586207" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="160" y="110" />
+              <mxPoint x="160" y="140" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oHVkFjz3ECCGFoP-RqGt-18" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="oHVkFjz3ECCGFoP-RqGt-5">
+          <mxGeometry x="45" y="50" width="10" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="oHVkFjz3ECCGFoP-RqGt-6" value="Сервисы" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="710" y="200" width="100" height="430" as="geometry" />
+        </mxCell>
+        <mxCell id="oHVkFjz3ECCGFoP-RqGt-7" value="Репозитории" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="827" y="200" width="100" height="430" as="geometry" />
+        </mxCell>
+        <mxCell id="oHVkFjz3ECCGFoP-RqGt-8" value="База Данных" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="960" y="200" width="100" height="420" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

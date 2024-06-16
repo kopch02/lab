@@ -1,0 +1,142 @@
+:root {
+  --font-family: "Jost", sans-serif;
+  --second-family: "Arial", sans-serif;
+}
+
+
+.header-conteiner {
+  padding-left: 100px;
+  padding-right: 100px;
+  background-color: #141024;
+  font-size: 0;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.nav-link {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 160%;
+  text-align: center;
+  text-decoration:none;
+  color: #fff;
+}
+
+main {
+  display: flex;
+}
+
+.main-container {
+  border-radius: 15px;
+  border: 3px solid #141024;
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+section {
+  margin-top: 120px;
+}
+
+.fio-foto {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 160%;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+
+.fio-foto img {
+  margin-top: 20px;
+  margin-left: 100px;
+  height: 300px;
+  width: 200px;
+}
+
+.university {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 160%;
+  text-align: center;
+  background: #f9f9f9;
+
+}
+
+.university p {
+  padding-left: 15px;
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 110%;
+  text-align: left;
+}
+
+.profession {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 160%;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+.profession p {
+  padding-left: 15px;
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 110%;
+  text-align: left;
+}
+
+.hobbies {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 160%;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+.hobbies p {
+  padding-left: 15px;
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 110%;
+  text-align: left;
+}
+
+.footer-container {
+  padding-left: 100px;
+  padding-right: 100px;
+  height: 200px;
+  margin-top: 20px;
+  background-color: #141024;
+  font-size: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer-container a {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 160%;
+  text-align: center;
+  text-decoration:none;
+  color: #d52027;
+}

@@ -1,0 +1,38 @@
+:root {
+  --font-family: 'Poppins', sans-serif;
+  --second-family: 'Inter', sans-serif;
+  --third-family: 'Manrope', sans-serif;
+  --font3: 'Outfit', sans-serif;
+  --font4: 'DM Sans', sans-serif;
+  --font5: 'Public Sans', sans-serif;
+  --font6: 'Roboto', sans-serif;
+  --font7: 'Urbanist', sans-serif;
+  --font8: 'Plus Jakarta Sans', sans-serif;
+}
+
+#root {
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  max-width: 1250px;
+  margin: 0 auto;
+  margin-top: 120px;
+  padding: 0 15px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin-top: 40px;
+    padding: 0 10px;
+    width: calc(100% - 20px);
+  }
+}

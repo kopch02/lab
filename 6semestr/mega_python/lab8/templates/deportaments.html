@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Список Депортаментов</h1>
+{% for item in deps%}
+    
+        <h2>{{loop.index}}</h2>
+        <table bgcolor="#ffcc00" border="3" bordercolor="red" cellpadding="10">
+            <tr>
+                <td>Название </td>
+                <td>ФИО главного</td>
+                <td>Участники</td>
+                <td>почта</td>
+              </tr>
+              <tr>
+                <td>{{item.title}}</td>
+                <td>{{item.user.surname}} {{item.user.name}}</td>
+                <td>{{item.members}}</td>
+                <td>{{item.email}}</td>
+              </tr>
+              
+        </table>
+        {% if current_user.is_authenticated %}
+            {% if current_user.id == 1 or current_user.id == item.user.id%}
+                <p>
+                    <a class="btn btn-success" href="/deportament/{{item.id}}">Редактировать</a>
+                    <a class="btn btn-danger" href="/delete_deportament/{{ item.id }}">Удалить</a>
+                </p>
+            {% endif %}
+        {% endif %}
+        {% endfor %}
+        {% if current_user.is_authenticated %}
+        <p>
+            <a class="btn btn-success" href="/add_deportament">Добавить</a>
+        </p>
+        {% endif %}
+            
+
+{% endblock %}

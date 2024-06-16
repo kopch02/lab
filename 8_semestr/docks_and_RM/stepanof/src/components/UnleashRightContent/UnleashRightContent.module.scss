@@ -1,0 +1,12 @@
+.unleash__right_content {
+  width: 436px;
+  height: 613px;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .unleash__right_content {
+    margin: 0 auto;
+    height: 250px;
+  }
+}

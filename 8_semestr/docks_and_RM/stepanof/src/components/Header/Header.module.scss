@@ -1,0 +1,164 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  max-width: 1250px;
+  height: 58px;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 53px;
+  height: 53px;
+}
+
+.logo span {
+  display: none;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 130%;
+  color: #000;
+}
+
+.nav_mobile_btn {
+  display: none;
+  border: 0;
+  background-color: #fff;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.nav__list {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  max-width: 445px;
+  gap: 30px;
+  height: 27px;
+  padding-left: 0;
+
+  &_link {
+    font-family: var(--second-family);
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 150%;
+    text-transform: uppercase;
+    color: #606060;
+    text-decoration: none;
+  }
+}
+
+.nav_input {
+  display: flex;
+  flex-direction: row;
+  width: 348px;
+  height: 57px;
+  border: 0;
+  border-radius: 14px;
+  background-color: #ededed;
+
+  & img {
+    margin-top: 18px;
+    margin-left: 23px;
+    margin-right: 26px;
+    width: 24px;
+    height: 24px;
+  }
+
+  & input {
+    font-family: var(--font-family);
+    border: 0;
+    background-color: #ededed;
+    font-size: 20px;
+    width: 250px;
+    height: 53px;
+    outline: none;
+
+    &::placeholder {
+      font-family: var(--font-family);
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 117%;
+      letter-spacing: -0.02em;
+      color: #c2c3cb;
+    }
+  }
+}
+
+.nav_btn {
+  border: 0;
+  border-radius: 16px;
+  width: 202px;
+  height: 57px;
+  background: #141416;
+  font-family: var(--second-family);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  text-transform: uppercase;
+  color: #fff;
+  transition: 0.7s;
+
+  &:hover {
+    color: #000;
+    border: 1.5px solid #000;
+    background: #fff;
+    cursor: pointer;
+  }
+
+  &:active {
+    transition: 0.2s;
+    transform: scaleY(0.8);
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    width: 100%;
+  }
+
+  .logo span {
+    display: inline;
+  }
+
+  .nav_mobile_btn {
+    position: relative;
+    display: block;
+    border-radius: 10px;
+    border: 2px solid #141416;
+  }
+
+  .nav__list {
+    display: none;
+  }
+
+  .nav_input {
+    display: none;
+  }
+
+  .nav_btn {
+    display: none;
+  }
+}
+
+.nav__list_active {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #c2c3cb;
+  height: 100vh;
+  z-index: 4;
+  left: 0;
+  top: 0;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 0;
+}

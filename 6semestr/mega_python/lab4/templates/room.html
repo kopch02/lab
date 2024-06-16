@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<table bgcolor="#ffcc00" border="3" bordercolor="red" cellpadding="10">
+    
+    <tr>
+      <td>Цвет стен</td>
+      <td>Эмблема</td>
+    </tr>
+    <tr>
+        {% if sex == "male" %}
+            <td>синий</td>
+        {% elif sex == "female" %}
+            <td>розовый</td>
+        {% else %}
+            <td>неправильно выбран пол</td>
+        {% endif %}
+        
+        {% if age < 21 %}
+            <td><img src={{url_for('photo',name="age_18.png")}}></td>
+        {% elif age >= 21 %}
+            <td><img src={{url_for('photo',name="age_21.png")}}></td>
+        {% else %}
+            <td>неправильно введён возраст</td>
+        {% endif %}
+      </tr>
+  </table>
+{% endblock %}

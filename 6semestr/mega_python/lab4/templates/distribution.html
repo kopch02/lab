@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% for prof in members %}
+    <div>
+        {% set num = loop.index %}
+        <h6>{{prof["first_name"]}}  {{prof["last_name"]}} - каюта № {{num}} {% if loop.first %} - капитан корабля {% endif %}</h6>
+    </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "base.html" %} {% block side_content %}
+<script src="{{ url_for('static', filename='js/btn_copy.js') }}"></script>
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/import.css')}}"
+  type="text/css"
+/>
+
+<h1 class="title">Импорт истории прыжков</h1>
+<div class="container">
+  <form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <div class="form">
+      <label class="form__label" for="url_history_input"
+        >Откройте историю прыжков в игре, далее</label
+      ><br />
+      <label class="form__label" for="url_history_input">Выполните:</label
+      ><br />
+      <div class="command-wrapper">
+        <code class="command" id="myText"
+          >Invoke-Expression (New-Object
+          Net.WebClient).DownloadString("https://gist.githubusercontent.com/kopch02/a98fe2107e7897672d05a1bd25b20e8a/raw/bdf44928a82825db5d417392d987566895ac820f/gistfile1.txt")</code
+        >
+      </div>
+      <button class="btn btn-primary" onclick="event.preventDefault(); copyToClipboard()">
+        Скопировать
+      </button>
+      <div class="tip">В PowerShell, чтобы скопировать ссылку</div>
+      <div class="input-wrapper">
+        {{form.url_history.label}}<br />
+        {{form.url_history(style="width: 400px", autocomplete="off")}}<br />
+      </div>
+      {{ form.submit(type="submit", class="btn btn-primary") }}
+    </div>
+  </form>
+</div>
+<script></script>
+{% endblock %}
